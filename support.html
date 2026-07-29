@@ -1,492 +1,81 @@
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="쓰일사진 고객 지원 - 한국어, English, 日本語">
-  <meta name="theme-color" content="#123f91">
-  <title>쓰일사진 고객 지원</title>
-  <style>
-  :root {
-    color-scheme: dark;
-    --blue: #123f91;
-    --blue-deep: #08295f;
-    --blue-ink: #061f49;
-    --ivory: #fff7df;
-    --ivory-soft: #eadfbd;
-    --orange: #ff8a3d;
-    --green: #62d7a0;
-    --line: rgba(255, 247, 223, 0.22);
-    --surface: rgba(6, 31, 73, 0.72);
-    --focus: #ffd166;
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    min-height: 100vh;
-    background: var(--blue-deep);
-    color: var(--ivory);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    line-height: 1.7;
-    letter-spacing: 0;
-  }
-  a { color: var(--ivory); text-underline-offset: 0.2em; }
-  a:hover { color: #ffffff; }
-  a:focus-visible, button:focus-visible {
-    outline: 3px solid var(--focus);
-    outline-offset: 3px;
-  }
-  .top-band {
-    background: var(--blue);
-    border-bottom: 1px solid var(--line);
-  }
-  .shell {
-    width: min(100% - 32px, 880px);
-    margin: 0 auto;
-  }
-  header {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    min-height: 112px;
-    padding: 22px 0;
-  }
-  .brand-mark {
-    position: relative;
-    width: 70px;
-    height: 70px;
-    flex: 0 0 70px;
-    border: 5px solid var(--ivory);
-    border-radius: 8px;
-  }
-  .brand-mark::before {
-    content: "";
-    position: absolute;
-    width: 28px;
-    height: 28px;
-    left: 16px;
-    top: 16px;
-    border: 4px solid var(--ivory);
-    border-radius: 50%;
-  }
-  .brand-mark::after {
-    content: "";
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    right: -8px;
-    top: -8px;
-    border-radius: 50%;
-    background: var(--orange);
-    box-shadow: -44px 68px 0 -2px var(--orange);
-  }
-  .clock-hand {
-    position: absolute;
-    z-index: 1;
-    width: 3px;
-    height: 12px;
-    left: 32px;
-    top: 23px;
-    border-radius: 2px;
-    background: var(--ivory);
-    transform-origin: 50% 10px;
-    transform: rotate(36deg);
-  }
-  .clock-hand::after {
-    content: "";
-    position: absolute;
-    width: 10px;
-    height: 3px;
-    left: 0;
-    bottom: 1px;
-    border-radius: 2px;
-    background: var(--ivory);
-    transform-origin: 1px 1px;
-    transform: rotate(72deg);
-  }
-  .brand-copy { min-width: 0; }
-  .brand-name {
-    margin: 0;
-    font-size: clamp(1.55rem, 4vw, 2.15rem);
-    font-weight: 800;
-  }
-  .brand-meta {
-    margin: 2px 0 0;
-    color: var(--ivory-soft);
-    font-size: 0.95rem;
-  }
-  .language-nav {
-    display: flex;
-    gap: 8px;
-    padding: 0 0 20px;
-    overflow-x: auto;
-  }
-  .language-nav button {
-    min-width: 88px;
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    padding: 10px 14px;
-    background: var(--blue-ink);
-    color: var(--ivory);
-    font: inherit;
-    font-weight: 700;
-    cursor: pointer;
-  }
-  .language-nav button[aria-selected="true"] {
-    border-color: var(--orange);
-    background: var(--orange);
-    color: var(--blue-ink);
-  }
-  main { padding: 42px 0 64px; }
-  .hero {
-    padding-bottom: 30px;
-    border-bottom: 1px solid var(--line);
-  }
-  .eyebrow {
-    margin: 0 0 10px;
-    color: var(--orange);
-    font-size: 0.84rem;
-    font-weight: 800;
-    text-transform: uppercase;
-  }
-  h1 {
-    margin: 0;
-    max-width: 760px;
-    font-size: clamp(2rem, 7vw, 3.65rem);
-    line-height: 1.14;
-  }
-  .lede {
-    max-width: 740px;
-    margin: 18px 0 0;
-    color: var(--ivory-soft);
-    font-size: 1.08rem;
-  }
-  .effective {
-    display: inline-block;
-    margin-top: 18px;
-    padding: 6px 10px;
-    border: 1px solid var(--line);
-    border-radius: 4px;
-    color: var(--ivory-soft);
-    font-size: 0.88rem;
-  }
-  .content-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 14px;
-    padding-top: 28px;
-  }
-  .section {
-    padding: 24px;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    background: var(--surface);
-  }
-  h2 {
-    margin: 0 0 12px;
-    font-size: 1.25rem;
-    line-height: 1.35;
-  }
-  h3 {
-    margin: 22px 0 8px;
-    color: var(--green);
-    font-size: 1rem;
-  }
-  p { margin: 0 0 12px; }
-  p:last-child { margin-bottom: 0; }
-  ul { margin: 0; padding-left: 1.25rem; }
-  li + li { margin-top: 7px; }
-  .notice {
-    border-left: 4px solid var(--orange);
-    padding-left: 16px;
-  }
-  .actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 16px;
-  }
-  .action {
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-    border-radius: 6px;
-    padding: 10px 14px;
-    background: var(--orange);
-    color: var(--blue-ink);
-    font-weight: 800;
-    text-decoration: none;
-  }
-  .action.secondary {
-    border: 1px solid var(--line);
-    background: transparent;
-    color: var(--ivory);
-  }
-  footer {
-    border-top: 1px solid var(--line);
-    padding: 28px 0 40px;
-    color: var(--ivory-soft);
-    font-size: 0.9rem;
-  }
-  .footer-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 10px 20px;
-  }
-  [data-language-panel][hidden] { display: none !important; }
-  @media (max-width: 560px) {
-    .shell { width: min(100% - 24px, 880px); }
-    header { min-height: 98px; }
-    .brand-mark { width: 58px; height: 58px; flex-basis: 58px; }
-    .brand-mark::before { left: 12px; top: 12px; width: 24px; height: 24px; }
-    .brand-mark::after { box-shadow: -34px 56px 0 -3px var(--orange); }
-    .clock-hand { left: 26px; top: 19px; }
-    main { padding-top: 32px; }
-    .section { padding: 20px; }
-    .actions { display: grid; }
-    .action { justify-content: center; text-align: center; }
-  }
-</style>
-</head>
-<body>
-  <div class="top-band">
-    <div class="shell">
-      <header>
-        <div class="brand-mark" aria-hidden="true"><span class="clock-hand"></span></div>
-        <div class="brand-copy">
-          <p class="brand-name">쓰일사진</p>
-          <p class="brand-meta">Sseuilsajin · Studio JS</p>
-        </div>
-      </header>
-      <nav class="language-nav" aria-label="Language">
-        <button type="button" data-language-button="ko" aria-selected="true">한국어</button>
-        <button type="button" data-language-button="en" aria-selected="false">English</button>
-        <button type="button" data-language-button="ja" aria-selected="false">日本語</button>
-      </nav>
-    </div>
-  </div>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="쓰일사진 고객 지원"><title>쓰일사진 — 고객 지원</title><link rel="icon" href="logo.svg" type="image/svg+xml"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0c1726;--panel:#142a43;--line:#2c4e70;--text:#eef5fb;--muted:#a6b8ca;--brand:#7eb5ee;--accent:#f3a663}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo","Hiragino Sans",sans-serif;background:radial-gradient(circle at top right,rgba(126,181,238,.13),transparent 34%),var(--bg);color:var(--text);padding:22px;line-height:1.72}
+.container{max-width:720px;margin:auto}
+.hero{border:1px solid var(--line);background:linear-gradient(145deg,#183653,#12253a);border-radius:20px;padding:22px;margin-bottom:22px}
+.brand{display:flex;align-items:center;gap:14px}.mark-logo{width:56px;height:56px;border-radius:14px;display:block;object-fit:cover;box-shadow:0 6px 20px rgba(0,0,0,.18)}
+.eyebrow{font-size:12px;letter-spacing:.1em;color:var(--accent);font-weight:700}h1{font-size:25px;letter-spacing:-.02em} .subtitle{font-size:14px;color:var(--muted)}
+.tabs{display:flex;gap:8px;margin:0 0 22px;border-bottom:1px solid var(--line);padding-bottom:15px}
+.tab{flex:1;padding:10px 8px;border:1px solid var(--line);border-radius:10px;background:transparent;color:var(--muted);cursor:pointer}
+.tab.active{border-color:var(--brand);background:rgba(126,181,238,.14);color:var(--text);font-weight:700}
+.lang{display:none}.lang.active{display:block}
+.notice,.contact,.card{border:1px solid var(--line);border-radius:13px;padding:15px 17px;margin:13px 0;background:rgba(20,42,67,.72)}
+.notice{border-color:rgba(243,166,99,.38);color:#f7cda9;background:rgba(243,166,99,.08)}
+h2{font-size:18px;color:var(--brand);margin:32px 0 11px;border-left:3px solid var(--accent);padding-left:11px}
+h3{font-size:15px;margin:19px 0 7px}p{font-size:15px;color:var(--muted);margin-bottom:11px}ul{padding-left:20px;margin-bottom:11px}li{font-size:14px;color:var(--muted);margin-bottom:6px}
+strong{color:var(--text)}a{color:var(--accent);text-underline-offset:3px}.footer{margin-top:44px;padding-top:20px;border-top:1px solid var(--line)}.footer p{font-size:12px;color:#71869a;margin-bottom:4px}
+.badge{display:inline-block;font-size:12px;font-weight:700;color:#93d6aa;background:rgba(147,214,170,.1);padding:4px 8px;border-radius:999px;margin-bottom:8px}
+@media(max-width:520px){body{padding:14px}.hero{padding:18px}h1{font-size:22px}.tab{font-size:12px;padding:9px 4px}p{font-size:14px}}
+</style></head><body><main class="container">
+<div class="hero"><div class="brand"><img class="mark-logo" src="logo.svg" alt="쓰일사진 로고" width="56" height="56"><div><div class="eyebrow">SSEUILSAJIN</div><h1>쓰일사진</h1><p class="subtitle">추억은 사진앱에, 쓸 사진은 여기에.</p></div></div></div>
+<div class="tabs"><button class="tab active" data-lang="ko" onclick="setLang('ko',this)">🇰🇷 한국어</button><button class="tab" data-lang="en" onclick="setLang('en',this)">🇺🇸 English</button><button class="tab" data-lang="ja" onclick="setLang('ja',this)">🇯🇵 日本語</button></div>
 
-  <main class="shell">
-    <article data-language-panel="ko">
-      <section class="hero">
-        <p class="eyebrow">Customer Support</p>
-        <h1>고객 지원</h1>
-        <p class="lede">사진 권한, 인식 결과, 알림, 원본 처리와 저장공간 문제를 빠르게 확인할 수 있습니다.</p>
-      </section>
-      <div class="content-grid">
-        <section class="section">
-          <h2>문의하기</h2>
-          <p>문제가 계속되면 앱 버전, iOS 버전, 발생한 화면과 재현 순서를 적어 보내 주세요. 사진 원본이나 전체 OCR 원문처럼 민감한 자료는 꼭 필요한 경우에만 보내 주세요.</p>
-          <div class="actions">
-            <a class="action" href="mailto:studiojeongsun@gmail.com?subject=%EC%93%B0%EC%9D%BC%EC%82%AC%EC%A7%84%20%EC%A7%80%EC%9B%90%20%EB%AC%B8%EC%9D%98">studiojeongsun@gmail.com</a>
-          </div>
-        </section>
-        <section class="section">
-          <h2>사진 접근 권한</h2>
-          <p>사진을 찾거나 가져오지 못하면 iPhone의 <strong>설정 → 개인정보 보호 및 보안 → 사진 → 쓰일사진</strong>에서 접근 범위를 확인해 주세요. 제한 접근에서는 허용한 사진만 사용할 수 있습니다.</p>
-        </section>
-        <section class="section">
-          <h2>카메라 권한</h2>
-          <p>촬영 화면이 열리지 않으면 <strong>설정 → 개인정보 보호 및 보안 → 카메라 → 쓰일사진</strong>을 켜 주세요. 쓰일사진은 사용자가 촬영을 시작할 때만 카메라를 사용합니다.</p>
-        </section>
-        <section class="section">
-          <h2>인식 결과가 틀리거나 부족할 때</h2>
-          <p>반사광과 흔들림을 줄이고 문서 전체가 보이게 촬영하거나, 더 선명한 사진을 선택해 주세요. 후보 확인 화면의 <strong>정보 수정</strong>에서 날짜, 시간, 장소, 번호와 유형별 정보를 직접 고칠 수 있습니다.</p>
-          <p>인식은 기기 안에서 수행되며, 외부 AI로 사진을 보내지 않습니다.</p>
-        </section>
-        <section class="section">
-          <h2>알림</h2>
-          <p>알림이 오지 않으면 <strong>설정 → 알림 → 쓰일사진</strong>에서 알림 허용을 확인하고, 카드의 알림 날짜가 미래인지 확인해 주세요. 권한이 거부되거나 날짜가 유효하지 않으면 앱은 예약 성공으로 표시하지 않습니다.</p>
-        </section>
-        <section class="section">
-          <h2>원본 사진 삭제</h2>
-          <p>원본은 사용자가 삭제 동작을 선택하고 iOS 확인을 승인한 경우에만 삭제됩니다. 시스템 확인에서 취소하면 사진은 유지되며, 앱에서 다시 시도할 수 있습니다.</p>
-        </section>
-        <section class="section">
-          <h2>최근 삭제된 항목</h2>
-          <p>삭제한 원본은 Apple 사진 앱의 <strong>앨범 → 최근 삭제된 항목</strong>에서 확인할 수 있습니다. 일반적으로 최대 30일 동안 복구할 수 있으며, 정확한 기간은 Apple 정책과 기기 설정을 따릅니다.</p>
-        </section>
-        <section class="section">
-          <h2>저장공간</h2>
-          <p>쓰일사진 카드는 원본보다 작은 이미지와 필요한 텍스트를 로컬에 보관합니다. 진단 중 생성된 임시 분석 파일은 앱의 사진과 저장공간 화면에서 확인하고 비울 수 있습니다. 카드에 필요한 이미지와 원본 사진은 임시 파일 비우기 대상이 아닙니다.</p>
-        </section>
-        <section class="section">
-          <h2>카드와 데이터 삭제</h2>
-          <p>앱에서 지원하는 카드 정리 기능을 이용해 카드 상태를 관리할 수 있습니다. 앱을 삭제하면 앱 내부의 카드, 저용량 이미지와 설정은 복구할 수 없습니다. 사진 앱 원본은 사용자가 별도로 삭제를 승인하지 않는 한 앱 삭제만으로 삭제되지 않습니다.</p>
-        </section>
-        <section class="section">
-          <h2>개인정보처리방침</h2>
-          <p>처리하는 정보와 기기 내 분석, 원본 삭제의 안전 조건은 개인정보처리방침에서 확인할 수 있습니다.</p>
-          <div class="actions">
-            <a class="action" data-language-link="index.html" href="index.html#ko">개인정보처리방침 보기</a>
-          </div>
-        </section>
-      </div>
-    </article>
+<section id="lang-ko" class="lang active">
+<h1>고객 지원</h1><p>쓰일사진 이용 중 문의, 오류 신고, 기능 제안이 있으면 아래로 연락해 주세요.</p>
+<div class="contact"><ul style="margin-bottom:0"><li>이메일: <a href="mailto:studiojeongsun@gmail.com">studiojeongsun@gmail.com</a></li><li>개발 및 운영: Studio JS</li><li>Apple ID: 6795992399</li><li>Bundle ID: com.sseuilsajin.app</li><li>응답: 영업일 기준 1~3일 이내</li></ul></div>
+<h2>빠른 도움말</h2>
+<div class="card"><span class="badge">카드 만들기</span><p>홈의 추가 버튼에서 카메라 촬영, 사진 가져오기 또는 사진첩 진단을 선택하세요. 자동으로 찾은 정보는 저장 전에 확인하고 수정할 수 있습니다.</p></div>
+<div class="card"><span class="badge">현장에서 사용</span><p>카드 상세에서 원본 사진, QR·바코드, 번호, 좌석, 시간과 장소를 확인하세요.</p></div>
+<div class="card"><span class="badge">원본 정리</span><p>저용량 카드가 정상 저장된 뒤에만 원본 삭제를 선택하세요. 삭제 사진은 Apple ‘최근 삭제된 항목’에 최대 30일 남을 수 있습니다.</p></div>
+<h2>자주 묻는 질문</h2>
+<h3>사진이 보이지 않아요.</h3><p>iPhone 설정 → 개인정보 보호 및 보안 → 사진 → 쓰일사진에서 접근 범위를 확인하세요.</p>
+<h3>카메라가 열리지 않아요.</h3><p>iPhone 설정 → 개인정보 보호 및 보안 → 카메라 → 쓰일사진을 켜 주세요.</p>
+<h3>자동 인식이 틀렸어요.</h3><p>빛 반사, 기울기, 흐림, 잘린 화면에 따라 달라질 수 있습니다. 저장 전 ‘정보 수정’에서 날짜, 시간, 금액, 번호와 유형을 고쳐 주세요.</p>
+<h3>알림이 오지 않아요.</h3><p>iPhone 설정 → 알림 → 쓰일사진에서 알림 허용을 확인하세요. 집중 모드와 알림 요약도 확인하세요.</p>
+<h3>원본을 삭제하면 바로 용량이 늘어나나요?</h3><p>삭제 사진은 Apple ‘최근 삭제된 항목’에 남을 수 있어 실제 공간 반영이 늦어질 수 있습니다. 쓰일사진은 이 앨범을 대신 비울 수 없습니다.</p>
+<h3>원본 삭제를 취소할 수 있나요?</h3><p>Apple 사진 앱 → 앨범 → 최근 삭제된 항목에서 Apple이 허용하는 기간 안에 복구할 수 있습니다.</p>
+<h3>데이터는 어디에 저장되나요?</h3><p>현재 TestFlight 기준 버전은 카드와 저용량 이미지를 이 iPhone 안에 저장하며 iCloud 동기화와 자동 백업을 아직 제공하지 않습니다.</p>
+<h3>문의할 때 무엇을 보내야 하나요?</h3><p>앱 버전·빌드, iOS 버전, 문제가 발생한 화면과 재현 순서를 보내 주세요. 영수증, 주소, 번호, 바코드 등 민감정보는 가려 주세요.</p>
+<h2>관련 문서</h2><p><a href="index.html#ko">개인정보 처리방침 보기</a></p>
+<div class="footer"><p>© 2026 Studio JS. All rights reserved.</p><p>최종 수정일: 2026년 7월 30일</p></div>
+</section>
 
-    <article data-language-panel="en" hidden>
-      <section class="hero">
-        <p class="eyebrow">Customer Support</p>
-        <h1>Customer Support</h1>
-        <p class="lede">Find quick help for photo permissions, recognition results, notifications, original-photo handling, and storage.</p>
-      </section>
-      <div class="content-grid">
-        <section class="section">
-          <h2>Contact us</h2>
-          <p>If a problem continues, include the app version, iOS version, the screen where it happened, and steps to reproduce it. Send original photos or full OCR text only when necessary.</p>
-          <div class="actions">
-            <a class="action" href="mailto:studiojeongsun@gmail.com?subject=Sseuilsajin%20Support">studiojeongsun@gmail.com</a>
-          </div>
-        </section>
-        <section class="section">
-          <h2>Photo access</h2>
-          <p>If the app cannot find or import photos, check <strong>Settings → Privacy &amp; Security → Photos → Sseuilsajin</strong>. With limited access, only the photos you approve are available.</p>
-        </section>
-        <section class="section">
-          <h2>Camera access</h2>
-          <p>If capture does not open, enable Sseuilsajin under <strong>Settings → Privacy &amp; Security → Camera</strong>. The camera is used only when you start a capture.</p>
-        </section>
-        <section class="section">
-          <h2>Incorrect or incomplete recognition</h2>
-          <p>Reduce glare and motion, keep the whole document visible, or choose a clearer image. Use <strong>Edit information</strong> on the review screen to correct dates, times, locations, numbers, and type-specific fields.</p>
-          <p>Recognition runs on device. Photos are not sent to an external AI service.</p>
-        </section>
-        <section class="section">
-          <h2>Notifications</h2>
-          <p>If a reminder does not arrive, check <strong>Settings → Notifications → Sseuilsajin</strong> and confirm that the card's notification date is in the future. The app does not show a successful schedule when permission is denied or the date is invalid.</p>
-        </section>
-        <section class="section">
-          <h2>Deleting original photos</h2>
-          <p>An original is deleted only after you choose a deletion action and approve the iOS confirmation. If you cancel the system prompt, the photo remains and you can retry from the app.</p>
-        </section>
-        <section class="section">
-          <h2>Recently Deleted</h2>
-          <p>Find deleted originals in <strong>Apple Photos → Albums → Recently Deleted</strong>. They can generally be recovered for up to 30 days; the exact period follows Apple's policies and your device settings.</p>
-        </section>
-        <section class="section">
-          <h2>Storage</h2>
-          <p>Cards keep a smaller image and useful text locally. Temporary analysis files created during discovery can be reviewed and cleared in the app's Photos and Storage screen. Images needed by cards and original photos are not temporary-file cleanup targets.</p>
-        </section>
-        <section class="section">
-          <h2>Deleting cards and app data</h2>
-          <p>Use the app's card cleanup features to manage card status. Uninstalling the app makes local cards, reduced-size images, and settings unrecoverable. Original Photos items are not deleted merely by uninstalling the app unless you separately approved deletion.</p>
-        </section>
-        <section class="section">
-          <h2>Privacy Policy</h2>
-          <p>Read how information is handled, how on-device analysis works, and what safeguards apply to original-photo deletion.</p>
-          <div class="actions">
-            <a class="action" data-language-link="index.html" href="index.html#en">View Privacy Policy</a>
-          </div>
-        </section>
-      </div>
-    </article>
+<section id="lang-en" class="lang"><h1>Support</h1><p>For questions, bug reports, or feature requests, contact us below.</p>
+<div class="contact"><ul style="margin-bottom:0"><li>Email: <a href="mailto:studiojeongsun@gmail.com">studiojeongsun@gmail.com</a></li><li>Developer and operator: Studio JS</li><li>Apple ID: 6795992399</li><li>Bundle ID: com.sseuilsajin.app</li><li>Response: within 1–3 business days</li></ul></div>
+<h2>Quick Help</h2><div class="card"><span class="badge">Create a card</span><p>Use the add button to capture, import from Photos, or scan your photo library. Review recognized details before saving.</p></div>
+<div class="card"><span class="badge">Use on site</span><p>Open a card to view its source image, QR/barcode, number, seat, time, and venue.</p></div>
+<div class="card"><span class="badge">Clean up originals</span><p>Delete an original only after the compact card is safely stored. Deleted photos may remain in Recently Deleted for up to 30 days.</p></div>
+<h2>FAQ</h2><h3>Photos do not appear.</h3><p>Review iPhone Settings → Privacy & Security → Photos → SseuilSajin.</p>
+<h3>The camera does not open.</h3><p>Enable SseuilSajin in iPhone Settings → Privacy & Security → Camera.</p>
+<h3>Recognition is wrong.</h3><p>Glare, angle, blur, or cropping can affect results. Edit dates, times, amounts, identifiers, and type before saving.</p>
+<h3>Notifications do not arrive.</h3><p>Check iPhone Settings → Notifications → SseuilSajin, Focus mode, and Scheduled Summary.</p>
+<h3>Where is data stored?</h3><p>The current TestFlight baseline stores cards and compact images locally on this iPhone and does not yet provide iCloud sync or automatic backup.</p>
+<h3>What should I send to support?</h3><p>Include app version/build, iOS version, screen, and steps. Hide sensitive receipts, addresses, numbers, and barcodes.</p>
+<h2>Related</h2><p><a href="index.html#en">View Privacy Policy</a></p><div class="footer"><p>© 2026 Studio JS. All rights reserved.</p><p>Last updated: July 30, 2026</p></div></section>
 
-    <article data-language-panel="ja" hidden>
-      <section class="hero">
-        <p class="eyebrow">Customer Support</p>
-        <h1>カスタマーサポート</h1>
-        <p class="lede">写真の権限、認識結果、通知、原本写真の処理、ストレージに関する問題を確認できます。</p>
-      </section>
-      <div class="content-grid">
-        <section class="section">
-          <h2>お問い合わせ</h2>
-          <p>問題が続く場合は、アプリバージョン、iOSバージョン、発生した画面、再現手順をお知らせください。写真原本やOCR全文などの機密情報は、必要な場合に限って送信してください。</p>
-          <div class="actions">
-            <a class="action" href="mailto:studiojeongsun@gmail.com?subject=Sseuilsajin%20Support">studiojeongsun@gmail.com</a>
-          </div>
-        </section>
-        <section class="section">
-          <h2>写真アクセス</h2>
-          <p>写真を検索・取り込みできない場合は、<strong>設定 → プライバシーとセキュリティ → 写真 → Sseuilsajin</strong>でアクセス範囲を確認してください。制限付きアクセスでは、許可した写真のみ利用できます。</p>
-        </section>
-        <section class="section">
-          <h2>カメラアクセス</h2>
-          <p>撮影画面が開かない場合は、<strong>設定 → プライバシーとセキュリティ → カメラ</strong>でSseuilsajinを有効にしてください。カメラはユーザーが撮影を開始したときだけ使用されます。</p>
-        </section>
-        <section class="section">
-          <h2>認識結果が不正確・不十分な場合</h2>
-          <p>反射や手ぶれを減らし、書類全体が見えるように撮影するか、より鮮明な写真を選択してください。確認画面の<strong>情報を編集</strong>から日付、時刻、場所、番号、種類別項目を修正できます。</p>
-          <p>認識は端末内で行われ、写真を外部AIへ送信しません。</p>
-        </section>
-        <section class="section">
-          <h2>通知</h2>
-          <p>通知が届かない場合は、<strong>設定 → 通知 → Sseuilsajin</strong>を確認し、カードの通知日時が未来になっているか確認してください。権限が拒否されている場合や日時が無効な場合、アプリは予約成功として表示しません。</p>
-        </section>
-        <section class="section">
-          <h2>原本写真の削除</h2>
-          <p>ユーザーが削除操作を選択し、iOSの確認を承認した場合に限って原本が削除されます。システム確認でキャンセルすると写真は保持され、アプリから再試行できます。</p>
-        </section>
-        <section class="section">
-          <h2>最近削除した項目</h2>
-          <p>削除した原本は<strong>Apple写真 → アルバム → 最近削除した項目</strong>で確認できます。通常は最大30日間復元できますが、正確な期間はAppleのポリシーと端末設定に従います。</p>
-        </section>
-        <section class="section">
-          <h2>ストレージ</h2>
-          <p>カードは小さい画像と必要なテキストをローカルに保存します。診断中に作成された一時解析ファイルは、アプリの写真とストレージ画面で確認・削除できます。カードに必要な画像と原本写真は一時ファイル削除の対象ではありません。</p>
-        </section>
-        <section class="section">
-          <h2>カードとアプリデータの削除</h2>
-          <p>アプリのカード整理機能でカード状態を管理できます。アプリを削除すると、ローカルカード、低容量画像、設定は復元できません。原本写真は、ユーザーが別途削除を承認しない限り、アプリを削除しただけでは削除されません。</p>
-        </section>
-        <section class="section">
-          <h2>プライバシーポリシー</h2>
-          <p>情報の取り扱い、端末内解析、原本写真削除の安全条件について確認できます。</p>
-          <div class="actions">
-            <a class="action" data-language-link="index.html" href="index.html#ja">プライバシーポリシーを見る</a>
-          </div>
-        </section>
-      </div>
-    </article>
-  </main>
-
-  <footer>
-    <div class="shell footer-row">
-      <span>© 2026 Studio JS</span>
-      <span>Sseuilsajin · com.sseuilsajin.app</span>
-    </div>
-  </footer>
-  <script>
-  (() => {
-    const supported = ["ko", "en", "ja"];
-    const buttons = Array.from(document.querySelectorAll("[data-language-button]"));
-    const panels = Array.from(document.querySelectorAll("[data-language-panel]"));
-    const linked = Array.from(document.querySelectorAll("[data-language-link]"));
-
-    const activate = (requested) => {
-      const language = supported.includes(requested) ? requested : "ko";
-      document.documentElement.lang = language;
-      panels.forEach((panel) => {
-        panel.hidden = panel.dataset.languagePanel !== language;
-      });
-      buttons.forEach((button) => {
-        button.setAttribute(
-          "aria-selected",
-          button.dataset.languageButton === language ? "true" : "false"
-        );
-      });
-      linked.forEach((link) => {
-        const base = link.dataset.languageLink;
-        link.setAttribute("href", base + "#" + language);
-      });
-      if (location.hash !== "#" + language) {
-        history.replaceState(null, "", "#" + language);
-      }
-    };
-
-    buttons.forEach((button) => {
-      button.addEventListener("click", () => {
-        location.hash = button.dataset.languageButton;
-      });
-    });
-
-    window.addEventListener("hashchange", () => {
-      activate(location.hash.slice(1));
-    });
-
-    activate(location.hash.slice(1));
-  })();
+<section id="lang-ja" class="lang"><h1>サポート</h1><p>お問い合わせ、不具合報告、機能提案は下記までご連絡ください。</p>
+<div class="contact"><ul style="margin-bottom:0"><li>メール：<a href="mailto:studiojeongsun@gmail.com">studiojeongsun@gmail.com</a></li><li>開発・運営：Studio JS</li><li>Apple ID: 6795992399</li><li>Bundle ID: com.sseuilsajin.app</li><li>返信：1～3営業日以内</li></ul></div>
+<h2>クイックヘルプ</h2><div class="card"><span class="badge">カード作成</span><p>追加ボタンから撮影、写真読み込み、写真ライブラリ診断を選択し、保存前に結果を確認してください。</p></div>
+<div class="card"><span class="badge">現場で使用</span><p>カード詳細で元画像、QR・バーコード、番号、座席、時間、場所を確認できます。</p></div>
+<div class="card"><span class="badge">元写真の整理</span><p>低容量カード保存後に元写真を削除してください。削除写真は「最近削除した項目」に最大30日残る場合があります。</p></div>
+<h2>よくある質問</h2><h3>写真が表示されません。</h3><p>iPhone設定 → プライバシーとセキュリティ → 写真 → 쓰일사진を確認してください。</p>
+<h3>カメラが開きません。</h3><p>iPhone設定 → プライバシーとセキュリティ → カメラで쓰일사진を有効にしてください。</p>
+<h3>認識結果が間違っています。</h3><p>反射、傾き、ぼけ、切れた画像で結果が変わる場合があります。保存前に修正してください。</p>
+<h3>通知が届きません。</h3><p>iPhone設定 → 通知 → 쓰일사진、集中モード、通知要約を確認してください。</p>
+<h3>データはどこに保存されますか？</h3><p>現在のTestFlight基準版はカードと低容量画像をこのiPhone内に保存し、iCloud同期と自動バックアップはまだ提供していません。</p>
+<h3>問い合わせ時に必要な情報は？</h3><p>アプリのバージョン・ビルド、iOSバージョン、画面、再現手順をお送りください。機密情報は隠してください。</p>
+<h2>関連文書</h2><p><a href="index.html#ja">プライバシーポリシーを見る</a></p><div class="footer"><p>© 2026 Studio JS. All rights reserved.</p><p>最終更新日：2026年7月30日</p></div></section>
+</main>
+<script>
+function setLang(lang,btn){
+ document.querySelectorAll('.lang').forEach(e=>e.classList.remove('active'));
+ document.querySelectorAll('.tab').forEach(e=>e.classList.remove('active'));
+ const el=document.getElementById('lang-'+lang); if(el)el.classList.add('active');
+ if(btn)btn.classList.add('active'); document.documentElement.lang=lang;
+ history.replaceState(null,'','#'+lang);
+}
+addEventListener('DOMContentLoaded',()=>{const h=location.hash.slice(1);const l=['ko','en','ja'].includes(h)?h:'ko';setLang(l,document.querySelector('[data-lang="'+l+'"]'));});
 </script>
-</body>
-</html>
+</body></html>
