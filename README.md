@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="logo.svg" alt="쓰일사진 로고" width="120">
+</p>
+
 # 쓰일사진 개인정보처리방침 및 고객 지원
 
 쓰일사진(Sseuilsajin)의 공개 개인정보처리방침과 고객 지원 페이지입니다.
