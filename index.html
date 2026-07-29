@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="쓰일사진 개인정보처리방침 - 한국어, English, 日本語">
+  <meta name="theme-color" content="#123f91">
+  <title>쓰일사진 개인정보처리방침</title>
+  <style>
+  :root {
+    color-scheme: dark;
+    --blue: #123f91;
+    --blue-deep: #08295f;
+    --blue-ink: #061f49;
+    --ivory: #fff7df;
+    --ivory-soft: #eadfbd;
+    --orange: #ff8a3d;
+    --green: #62d7a0;
+    --line: rgba(255, 247, 223, 0.22);
+    --surface: rgba(6, 31, 73, 0.72);
+    --focus: #ffd166;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--blue-deep);
+    color: var(--ivory);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.7;
+    letter-spacing: 0;
+  }
+  a { color: var(--ivory); text-underline-offset: 0.2em; }
+  a:hover { color: #ffffff; }
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+  }
+  .top-band {
+    background: var(--blue);
+    border-bottom: 1px solid var(--line);
+  }
+  .shell {
+    width: min(100% - 32px, 880px);
+    margin: 0 auto;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    min-height: 112px;
+    padding: 22px 0;
+  }
+  .brand-mark {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    flex: 0 0 70px;
+    border: 5px solid var(--ivory);
+    border-radius: 8px;
+  }
+  .brand-mark::before {
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    left: 16px;
+    top: 16px;
+    border: 4px solid var(--ivory);
+    border-radius: 50%;
+  }
+  .brand-mark::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    right: -8px;
+    top: -8px;
+    border-radius: 50%;
+    background: var(--orange);
+    box-shadow: -44px 68px 0 -2px var(--orange);
+  }
+  .clock-hand {
+    position: absolute;
+    z-index: 1;
+    width: 3px;
+    height: 12px;
+    left: 32px;
+    top: 23px;
+    border-radius: 2px;
+    background: var(--ivory);
+    transform-origin: 50% 10px;
+    transform: rotate(36deg);
+  }
+  .clock-hand::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 3px;
+    left: 0;
+    bottom: 1px;
+    border-radius: 2px;
+    background: var(--ivory);
+    transform-origin: 1px 1px;
+    transform: rotate(72deg);
+  }
+  .brand-copy { min-width: 0; }
+  .brand-name {
+    margin: 0;
+    font-size: clamp(1.55rem, 4vw, 2.15rem);
+    font-weight: 800;
+  }
+  .brand-meta {
+    margin: 2px 0 0;
+    color: var(--ivory-soft);
+    font-size: 0.95rem;
+  }
+  .language-nav {
+    display: flex;
+    gap: 8px;
+    padding: 0 0 20px;
+    overflow-x: auto;
+  }
+  .language-nav button {
+    min-width: 88px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 10px 14px;
+    background: var(--blue-ink);
+    color: var(--ivory);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .language-nav button[aria-selected="true"] {
+    border-color: var(--orange);
+    background: var(--orange);
+    color: var(--blue-ink);
+  }
+  main { padding: 42px 0 64px; }
+  .hero {
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--line);
+  }
+  .eyebrow {
+    margin: 0 0 10px;
+    color: var(--orange);
+    font-size: 0.84rem;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  h1 {
+    margin: 0;
+    max-width: 760px;
+    font-size: clamp(2rem, 7vw, 3.65rem);
+    line-height: 1.14;
+  }
+  .lede {
+    max-width: 740px;
+    margin: 18px 0 0;
+    color: var(--ivory-soft);
+    font-size: 1.08rem;
+  }
+  .effective {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 6px 10px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    color: var(--ivory-soft);
+    font-size: 0.88rem;
+  }
+  .content-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    padding-top: 28px;
+  }
+  .section {
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface);
+  }
+  h2 {
+    margin: 0 0 12px;
+    font-size: 1.25rem;
+    line-height: 1.35;
+  }
+  h3 {
+    margin: 22px 0 8px;
+    color: var(--green);
+    font-size: 1rem;
+  }
+  p { margin: 0 0 12px; }
+  p:last-child { margin-bottom: 0; }
+  ul { margin: 0; padding-left: 1.25rem; }
+  li + li { margin-top: 7px; }
+  .notice {
+    border-left: 4px solid var(--orange);
+    padding-left: 16px;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .action {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    border-radius: 6px;
+    padding: 10px 14px;
+    background: var(--orange);
+    color: var(--blue-ink);
+    font-weight: 800;
+    text-decoration: none;
+  }
+  .action.secondary {
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--ivory);
+  }
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 28px 0 40px;
+    color: var(--ivory-soft);
+    font-size: 0.9rem;
+  }
+  .footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px 20px;
+  }
+  [data-language-panel][hidden] { display: none !important; }
+  @media (max-width: 560px) {
+    .shell { width: min(100% - 24px, 880px); }
+    header { min-height: 98px; }
+    .brand-mark { width: 58px; height: 58px; flex-basis: 58px; }
+    .brand-mark::before { left: 12px; top: 12px; width: 24px; height: 24px; }
+    .brand-mark::after { box-shadow: -34px 56px 0 -3px var(--orange); }
+    .clock-hand { left: 26px; top: 19px; }
+    main { padding-top: 32px; }
+    .section { padding: 20px; }
+    .actions { display: grid; }
+    .action { justify-content: center; text-align: center; }
+  }
+</style>
+</head>
+<body>
+  <div class="top-band">
+    <div class="shell">
+      <header>
+        <div class="brand-mark" aria-hidden="true"><span class="clock-hand"></span></div>
+        <div class="brand-copy">
+          <p class="brand-name">쓰일사진</p>
+          <p class="brand-meta">Sseuilsajin · Studio JS</p>
+        </div>
+      </header>
+      <nav class="language-nav" aria-label="Language">
+        <button type="button" data-language-button="ko" aria-selected="true">한국어</button>
+        <button type="button" data-language-button="en" aria-selected="false">English</button>
+        <button type="button" data-language-button="ja" aria-selected="false">日本語</button>
+      </nav>
+    </div>
+  </div>
+
+  <main class="shell">
+    <article data-language-panel="ko">
+      <section class="hero">
+        <p class="eyebrow">Privacy Policy</p>
+        <h1>개인정보처리방침</h1>
+        <p class="lede">쓰일사진은 사진 속 필요한 정보를 기기 안에서 읽고, 사용하기 쉬운 카드로 보관하도록 돕습니다. 사용자의 사진과 카드 정보는 원칙적으로 기기 안에서 처리됩니다.</p>
+        <span class="effective">시행일: 2026년 7월 30일</span>
+      </section>
+      <div class="content-grid">
+        <section class="section">
+          <h2>1. 적용 범위와 운영자</h2>
+          <p>이 방침은 Studio JS가 운영·개발하는 iOS 앱 <strong>쓰일사진</strong>(Apple ID 6795992399, Bundle ID com.sseuilsajin.app)에 적용됩니다.</p>
+          <p>문의: <a href="mailto:studiojeongsun@gmail.com">studiojeongsun@gmail.com</a></p>
+        </section>
+        <section class="section">
+          <h2>2. 앱이 다루는 정보</h2>
+          <ul>
+            <li>사용자가 사진 접근을 허용했거나 직접 선택한 사진</li>
+            <li>앱 카메라로 촬영한 문서 이미지</li>
+            <li>기기 내 OCR로 읽은 문자, 날짜, 시간, 장소, 좌석, 금액, 번호 등의 정보</li>
+            <li>기기 내에서 감지한 QR 코드·바코드 정보</li>
+            <li>앱에서 만든 카드, 저용량 카드 이미지, 사용·정리 상태와 알림 설정</li>
+            <li>원본 처리를 위해 필요한 사진 식별 정보와 처리 상태</li>
+          </ul>
+          <p>지원 이메일로 문의하면 사용자가 이메일에 직접 적거나 첨부한 정보가 Studio JS의 이메일 서비스로 전달됩니다. 이는 앱이 자동으로 수집하거나 전송하는 정보가 아닙니다.</p>
+        </section>
+        <section class="section">
+          <h2>3. 처리 목적</h2>
+          <ul>
+            <li>티켓, 예약, 쿠폰, 영수증, 보증·AS 자료 등 유용한 사진 찾기</li>
+            <li>사진의 문자·QR·바코드 분석과 카드 정보 제안</li>
+            <li>저용량 이미지와 필요한 텍스트를 카드로 보관</li>
+            <li>사용일·만료일 알림과 사용 후 정리 지원</li>
+            <li>사용자가 선택한 원본 처리 계획의 안전한 실행</li>
+          </ul>
+        </section>
+        <section class="section">
+          <h2>4. 처리 위치와 외부 전송</h2>
+          <p class="notice">사진 분석, OCR, QR·바코드 인식과 카드 저장은 기기 안에서 이루어집니다.</p>
+          <ul>
+            <li>외부 AI 서비스로 사진이나 OCR 결과를 보내지 않습니다.</li>
+            <li>Studio JS가 운영하는 외부 서버로 사진이나 카드 데이터를 업로드하지 않습니다.</li>
+            <li>광고 추적을 하지 않으며 제3자 분석·광고 SDK를 포함하지 않습니다.</li>
+            <li>광고 사업자나 데이터 중개자에게 정보를 판매하거나 제공하지 않습니다.</li>
+          </ul>
+        </section>
+        <section class="section">
+          <h2>5. 저장과 보관</h2>
+          <p>카드, 저용량 이미지, 분석 결과와 설정은 앱의 로컬 저장공간에 보관됩니다. 사용자가 카드나 앱 데이터를 삭제하거나 앱을 삭제할 때까지 유지될 수 있습니다.</p>
+          <p>앱을 삭제하면 앱 내부에만 저장된 카드와 설정은 복구할 수 없습니다. 앱 자체는 iCloud 동기화나 자동 백업 기능을 제공하지 않습니다. iOS 기기 백업의 동작은 사용자의 Apple 설정과 Apple 정책을 따릅니다.</p>
+        </section>
+        <section class="section">
+          <h2>6. 사진 원본 삭제</h2>
+          <p>쓰일사진은 사진 원본을 임의로 삭제하지 않습니다. 사용자가 앱에서 삭제 동작을 선택하고 iOS가 표시하는 시스템 확인을 승인한 경우에만 사진 앱에 삭제를 요청합니다.</p>
+          <p>삭제된 사진은 Apple 사진 앱의 <strong>최근 삭제된 항목</strong>에 이동하며, 보관 기간과 완전 삭제 방식은 Apple의 정책 및 기기 설정을 따릅니다. 일반적으로 최대 30일 동안 복구할 수 있습니다.</p>
+        </section>
+        <section class="section">
+          <h2>7. 사진·카메라·알림 권한</h2>
+          <ul>
+            <li><strong>사진:</strong> 사용자가 허용한 범위의 사진을 찾고 가져오기 위해 사용합니다.</li>
+            <li><strong>카메라:</strong> 사용자가 문서를 직접 촬영할 때만 사용합니다.</li>
+            <li><strong>알림:</strong> 사용일, 만료일 또는 정리 시점을 기기 로컬 알림으로 안내할 때 사용합니다.</li>
+          </ul>
+          <p>권한은 iOS 설정에서 언제든 변경할 수 있습니다. 권한을 거부해도 허용이 필요하지 않은 앱 기능은 계속 사용할 수 있습니다.</p>
+        </section>
+        <section class="section">
+          <h2>8. 제공하지 않는 기능</h2>
+          <p>현재 버전은 앱 자체의 iCloud 동기화, 자동 백업, 가족 공유, Widget, Share Extension, Spotlight 연동, StoreKit 결제를 제공하지 않습니다. 이러한 기능이 실제로 추가되어 정보 처리 방식이 바뀌면 이 방침을 갱신합니다.</p>
+        </section>
+        <section class="section">
+          <h2>9. 사용자의 선택과 삭제</h2>
+          <p>사용자는 사진 접근 권한, 알림 권한, 원본 처리 방식과 카드 정보를 직접 관리할 수 있습니다. 카드와 앱 데이터를 삭제하려면 앱의 관련 화면을 이용하거나 앱을 삭제할 수 있습니다. 사진 앱 원본은 별도의 사용자 확인 없이는 삭제되지 않습니다.</p>
+        </section>
+        <section class="section">
+          <h2>10. 변경과 문의</h2>
+          <p>앱 기능 또는 법적 요구사항이 바뀌면 시행일과 함께 이 방침을 갱신합니다. 개인정보 또는 지원 문의는 아래 채널을 이용해 주세요.</p>
+          <div class="actions">
+            <a class="action" data-language-link="support.html" href="support.html#ko">고객 지원 보기</a>
+            <a class="action secondary" href="mailto:studiojeongsun@gmail.com">이메일 문의</a>
+          </div>
+        </section>
+      </div>
+    </article>
+
+    <article data-language-panel="en" hidden>
+      <section class="hero">
+        <p class="eyebrow">Privacy Policy</p>
+        <h1>Privacy Policy</h1>
+        <p class="lede">Sseuilsajin helps you read useful information from photos on your device and keep it in convenient cards. Photos and card data are processed locally by default.</p>
+        <span class="effective">Effective date: July 30, 2026</span>
+      </section>
+      <div class="content-grid">
+        <section class="section">
+          <h2>1. Scope and operator</h2>
+          <p>This policy applies to the iOS app <strong>Sseuilsajin</strong> (Apple ID 6795992399, Bundle ID com.sseuilsajin.app), operated and developed by Studio JS.</p>
+          <p>Contact: <a href="mailto:studiojeongsun@gmail.com">studiojeongsun@gmail.com</a></p>
+        </section>
+        <section class="section">
+          <h2>2. Information handled by the app</h2>
+          <ul>
+            <li>Photos the user authorizes or selects</li>
+            <li>Document images captured with the in-app camera</li>
+            <li>Text, dates, times, locations, seats, amounts, and numbers read with on-device OCR</li>
+            <li>QR code and barcode information detected on device</li>
+            <li>Cards, reduced-size card images, usage and cleanup status, and notification settings</li>
+            <li>Photo identifiers and handling status needed for user-directed original-photo actions</li>
+          </ul>
+          <p>If you contact support by email, the information you choose to write or attach is sent to Studio JS through the email service. The app does not collect or transmit it automatically.</p>
+        </section>
+        <section class="section">
+          <h2>3. Purposes</h2>
+          <ul>
+            <li>Find useful photos such as tickets, reservations, coupons, receipts, and warranty or service records</li>
+            <li>Analyze text, QR codes, and barcodes and suggest card fields</li>
+            <li>Keep reduced-size images and useful text in local cards</li>
+            <li>Provide local reminders for use dates, expiration dates, and cleanup</li>
+            <li>Safely carry out the original-photo plan selected by the user</li>
+          </ul>
+        </section>
+        <section class="section">
+          <h2>4. On-device processing and external transfer</h2>
+          <p class="notice">Photo analysis, OCR, QR and barcode recognition, and card storage take place on the device.</p>
+          <ul>
+            <li>Photos and OCR results are not sent to an external AI service.</li>
+            <li>Photos and card data are not uploaded to a server operated by Studio JS.</li>
+            <li>The app does not perform advertising tracking and includes no third-party analytics or advertising SDK.</li>
+            <li>Information is not sold to advertisers or data brokers.</li>
+          </ul>
+        </section>
+        <section class="section">
+          <h2>5. Storage and retention</h2>
+          <p>Cards, reduced-size images, analysis results, and settings are stored locally in the app. They may remain until you delete the relevant card or app data, or uninstall the app.</p>
+          <p>Uninstalling the app makes app-only cards and settings unrecoverable. The app itself does not provide iCloud sync or automatic backup. Any iOS device backup behavior is controlled by your Apple settings and Apple's policies.</p>
+        </section>
+        <section class="section">
+          <h2>6. Deleting original photos</h2>
+          <p>Sseuilsajin does not delete original photos on its own. It requests deletion from Photos only after the user chooses a deletion action in the app and approves the iOS system confirmation.</p>
+          <p>Deleted photos move to <strong>Recently Deleted</strong> in Apple Photos. Retention and permanent deletion follow Apple's policies and device settings; photos can generally be recovered for up to 30 days.</p>
+        </section>
+        <section class="section">
+          <h2>7. Photos, camera, and notification permissions</h2>
+          <ul>
+            <li><strong>Photos:</strong> Used to find and import photos within the scope you authorize.</li>
+            <li><strong>Camera:</strong> Used only when you choose to capture a document.</li>
+            <li><strong>Notifications:</strong> Used for on-device reminders about use, expiration, or cleanup dates.</li>
+          </ul>
+          <p>You can change permissions at any time in iOS Settings. If you deny a permission, features that do not require it remain available.</p>
+        </section>
+        <section class="section">
+          <h2>8. Features not currently provided</h2>
+          <p>The current version does not provide app-managed iCloud sync, automatic backup, Family Sharing, Widgets, a Share Extension, Spotlight integration, or StoreKit purchases. This policy will be updated if those features are actually introduced and affect data handling.</p>
+        </section>
+        <section class="section">
+          <h2>9. Your controls and deletion</h2>
+          <p>You control photo access, notifications, original-photo handling, and card information. You may delete cards and app data through the relevant app screens or by uninstalling the app. Original photos are not deleted without separate user confirmation.</p>
+        </section>
+        <section class="section">
+          <h2>10. Changes and contact</h2>
+          <p>If app functionality or legal requirements change, this policy will be updated with a new effective date. For privacy or support questions, use the channels below.</p>
+          <div class="actions">
+            <a class="action" data-language-link="support.html" href="support.html#en">View support</a>
+            <a class="action secondary" href="mailto:studiojeongsun@gmail.com">Email support</a>
+          </div>
+        </section>
+      </div>
+    </article>
+
+    <article data-language-panel="ja" hidden>
+      <section class="hero">
+        <p class="eyebrow">Privacy Policy</p>
+        <h1>プライバシーポリシー</h1>
+        <p class="lede">Sseuilsajin（쓰일사진）は、写真に含まれる必要な情報を端末内で読み取り、使いやすいカードとして保存するためのアプリです。写真とカード情報は原則として端末内で処理されます。</p>
+        <span class="effective">施行日：2026年7月30日</span>
+      </section>
+      <div class="content-grid">
+        <section class="section">
+          <h2>1. 適用範囲と運営者</h2>
+          <p>本ポリシーは、Studio JSが運営・開発するiOSアプリ <strong>Sseuilsajin（쓰일사진）</strong>（Apple ID 6795992399、Bundle ID com.sseuilsajin.app）に適用されます。</p>
+          <p>お問い合わせ：<a href="mailto:studiojeongsun@gmail.com">studiojeongsun@gmail.com</a></p>
+        </section>
+        <section class="section">
+          <h2>2. アプリが扱う情報</h2>
+          <ul>
+            <li>ユーザーがアクセスを許可した、または直接選択した写真</li>
+            <li>アプリ内カメラで撮影した書類画像</li>
+            <li>端末内OCRで読み取った文字、日付、時刻、場所、座席、金額、番号など</li>
+            <li>端末内で検出したQRコード・バーコード情報</li>
+            <li>作成したカード、低容量のカード画像、使用・整理状態、通知設定</li>
+            <li>ユーザーが指定した原本写真の処理に必要な写真識別情報と処理状態</li>
+          </ul>
+          <p>サポートへメールで連絡する場合、ユーザーが本文や添付ファイルに含めた情報はメールサービスを通じてStudio JSへ送信されます。アプリが自動的に収集・送信するものではありません。</p>
+        </section>
+        <section class="section">
+          <h2>3. 利用目的</h2>
+          <ul>
+            <li>チケット、予約、クーポン、レシート、保証・修理資料などの有用な写真の検索</li>
+            <li>文字・QRコード・バーコードの解析とカード項目の提案</li>
+            <li>低容量画像と必要なテキストのカード保存</li>
+            <li>使用日・有効期限・整理時期のローカル通知</li>
+            <li>ユーザーが選択した原本写真の処理方針の安全な実行</li>
+          </ul>
+        </section>
+        <section class="section">
+          <h2>4. 端末内処理と外部送信</h2>
+          <p class="notice">写真解析、OCR、QR・バーコード認識、カード保存は端末内で行われます。</p>
+          <ul>
+            <li>写真やOCR結果を外部AIサービスへ送信しません。</li>
+            <li>Studio JSが運営する外部サーバーへ写真やカードデータをアップロードしません。</li>
+            <li>広告トラッキングを行わず、第三者の分析・広告SDKを含みません。</li>
+            <li>広告事業者やデータブローカーへ情報を販売・提供しません。</li>
+          </ul>
+        </section>
+        <section class="section">
+          <h2>5. 保存と保持</h2>
+          <p>カード、低容量画像、解析結果、設定はアプリのローカル領域に保存されます。ユーザーが該当するカードやアプリデータを削除するか、アプリをアンインストールするまで保持される場合があります。</p>
+          <p>アプリを削除すると、アプリ内のみに保存されたカードや設定は復元できません。アプリ自体はiCloud同期や自動バックアップを提供しません。iOS端末バックアップの動作はAppleの設定とポリシーに従います。</p>
+        </section>
+        <section class="section">
+          <h2>6. 原本写真の削除</h2>
+          <p>Sseuilsajinは原本写真を独自に削除しません。ユーザーがアプリ内で削除操作を選択し、iOSのシステム確認を承認した場合に限り、写真アプリへ削除を要求します。</p>
+          <p>削除された写真はApple写真アプリの<strong>「最近削除した項目」</strong>へ移動します。保持期間と完全削除はAppleのポリシーおよび端末設定に従い、通常は最大30日間復元できます。</p>
+        </section>
+        <section class="section">
+          <h2>7. 写真・カメラ・通知の権限</h2>
+          <ul>
+            <li><strong>写真：</strong>ユーザーが許可した範囲の写真を検索・取り込むために使用します。</li>
+            <li><strong>カメラ：</strong>ユーザーが書類を撮影するときだけ使用します。</li>
+            <li><strong>通知：</strong>使用日、有効期限、整理時期を端末のローカル通知で案内するために使用します。</li>
+          </ul>
+          <p>権限はiOS設定でいつでも変更できます。権限を拒否しても、その権限を必要としない機能は引き続き利用できます。</p>
+        </section>
+        <section class="section">
+          <h2>8. 現在提供していない機能</h2>
+          <p>現在のバージョンは、アプリ独自のiCloud同期、自動バックアップ、ファミリー共有、Widget、Share Extension、Spotlight連携、StoreKit決済を提供していません。これらの機能が実際に追加され、情報の取り扱いが変わる場合は本ポリシーを更新します。</p>
+        </section>
+        <section class="section">
+          <h2>9. ユーザーによる管理と削除</h2>
+          <p>ユーザーは写真アクセス、通知、原本写真の処理方法、カード情報を管理できます。カードやアプリデータは関連画面またはアプリの削除によって削除できます。原本写真は別途ユーザーの確認なしに削除されません。</p>
+        </section>
+        <section class="section">
+          <h2>10. 変更とお問い合わせ</h2>
+          <p>アプリ機能または法的要件が変わる場合、新しい施行日とともに本ポリシーを更新します。プライバシーまたはサポートに関するお問い合わせは以下をご利用ください。</p>
+          <div class="actions">
+            <a class="action" data-language-link="support.html" href="support.html#ja">サポートを見る</a>
+            <a class="action secondary" href="mailto:studiojeongsun@gmail.com">メールで問い合わせる</a>
+          </div>
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="shell footer-row">
+      <span>© 2026 Studio JS</span>
+      <span>Sseuilsajin · com.sseuilsajin.app</span>
+    </div>
+  </footer>
+  <script>
+  (() => {
+    const supported = ["ko", "en", "ja"];
+    const buttons = Array.from(document.querySelectorAll("[data-language-button]"));
+    const panels = Array.from(document.querySelectorAll("[data-language-panel]"));
+    const linked = Array.from(document.querySelectorAll("[data-language-link]"));
+
+    const activate = (requested) => {
+      const language = supported.includes(requested) ? requested : "ko";
+      document.documentElement.lang = language;
+      panels.forEach((panel) => {
+        panel.hidden = panel.dataset.languagePanel !== language;
+      });
+      buttons.forEach((button) => {
+        button.setAttribute(
+          "aria-selected",
+          button.dataset.languageButton === language ? "true" : "false"
+        );
+      });
+      linked.forEach((link) => {
+        const base = link.dataset.languageLink;
+        link.setAttribute("href", base + "#" + language);
+      });
+      if (location.hash !== "#" + language) {
+        history.replaceState(null, "", "#" + language);
+      }
+    };
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        location.hash = button.dataset.languageButton;
+      });
+    });
+
+    window.addEventListener("hashchange", () => {
+      activate(location.hash.slice(1));
+    });
+
+    activate(location.hash.slice(1));
+  })();
+</script>
+</body>
+</html>
