@@ -1,6 +1,9 @@
 name: Apply official logo
 
 on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/5 * * * *'
   push:
     paths:
       - '.github/workflows/apply-official-logo.yml'
