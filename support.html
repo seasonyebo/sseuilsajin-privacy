@@ -26,7 +26,7 @@ strong{color:var(--text)}a{color:var(--accent);text-underline-offset:3px}.footer
 <h1>고객 지원</h1><p>쓰일사진 이용 중 문의, 오류 신고, 기능 제안이 있으면 아래로 연락해 주세요.</p>
 <div class="contact"><ul style="margin-bottom:0"><li>이메일: <a href="mailto:studiojeongsun@gmail.com">studiojeongsun@gmail.com</a></li><li>개발 및 운영: Studio JS</li><li>Apple ID: 6795992399</li><li>Bundle ID: com.sseuilsajin.app</li><li>응답: 영업일 기준 1~3일 이내</li></ul></div>
 <h2>빠른 도움말</h2>
-<div class="card"><span class="badge">카드 만들기</span><p>홈의 추가 버튼에서 카메라 촬영, 사진 가져오기 또는 사진첩 진단을 선택하세요. 자동으로 찾은 정보는 저장 전에 확인하고 수정할 수 있습니다.</p></div>
+<div class="card"><span class="badge">카드 만들기</span><p>추가 버튼에서 사진 찍기, 사진에서 가져오기 또는 사진에서 찾기를 선택하세요. 자동으로 찾은 정보는 저장 전에 확인하고 수정할 수 있습니다.</p></div>
 <div class="card"><span class="badge">현장에서 사용</span><p>카드 상세에서 원본 사진, QR·바코드, 번호, 좌석, 시간과 장소를 확인하세요.</p></div>
 <div class="card"><span class="badge">원본 정리</span><p>저용량 카드가 정상 저장된 뒤에만 원본 삭제를 선택하세요. 삭제 사진은 Apple ‘최근 삭제된 항목’에 최대 30일 남을 수 있습니다.</p></div>
 <h2>자주 묻는 질문</h2>
@@ -36,10 +36,15 @@ strong{color:var(--text)}a{color:var(--accent);text-underline-offset:3px}.footer
 <h3>알림이 오지 않아요.</h3><p>iPhone 설정 → 알림 → 쓰일사진에서 알림 허용을 확인하세요. 집중 모드와 알림 요약도 확인하세요.</p>
 <h3>원본을 삭제하면 바로 용량이 늘어나나요?</h3><p>삭제 사진은 Apple ‘최근 삭제된 항목’에 남을 수 있어 실제 공간 반영이 늦어질 수 있습니다. 쓰일사진은 이 앨범을 대신 비울 수 없습니다.</p>
 <h3>원본 삭제를 취소할 수 있나요?</h3><p>Apple 사진 앱 → 앨범 → 최근 삭제된 항목에서 Apple이 허용하는 기간 안에 복구할 수 있습니다.</p>
-<h3>데이터는 어디에 저장되나요?</h3><p>현재 TestFlight 기준 버전은 카드와 저용량 이미지를 이 iPhone 안에 저장하며 iCloud 동기화와 자동 백업을 아직 제공하지 않습니다.</p>
+<h3>데이터는 어디에 저장되나요?</h3><p>카드와 앱 보관 이미지는 기기에 저장합니다. 설정에서 iCloud를 켜면 같은 Apple 계정의 기기끼리 개인 자료를 동기화합니다. 인식은 기기 안에서 처리하며 외부 AI나 Studio JS 서버에 보내지 않습니다. 이전 빌드에 기능이 없다면 최신 내부 테스트 빌드인지 확인하세요.</p>
+<h3>동기화와 백업은 무엇이 다른가요?</h3><p>동기화는 기기 사이의 최신 변경을 맞춥니다. 앱 백업은 이전 상태를 보관하는 별도의 스냅샷입니다. 자동 백업 설정과 마지막 성공 상태를 확인하고, 복구할 때는 검증된 백업을 선택해 미리보기 후 확인하세요. iCloud 용량이나 연결 문제가 있으면 완료되지 않을 수 있습니다.</p>
+<h3>iCloud에만 있는 사진은 어떻게 불러오나요?</h3><p>사진에서 찾기의 불러오기 안내에서 원하는 사진을 선택하세요. 승인한 사진만 PhotoKit으로 내려받아 기기 안에서 분석합니다. 이는 카드 동기화를 켜는 동작이 아니며, 다운로드 데이터가 발생할 수 있습니다.</p>
+<h3>자료를 파일로 보관하고 싶어요.</h3><p>설정의 데이터 내보내기에서 준비한 파일을 원하는 Files 위치에 저장하세요. 카드·사용 기록·보관함·앱 보관 이미지와 무결성 정보가 포함됩니다. 내보낸 파일은 민감할 수 있으므로 저장·공유 대상을 직접 확인하세요.</p>
+<h3>앱 데이터를 모두 지우려면 어떻게 하나요?</h3><p>설정의 데이터 삭제에서 범위를 확인하세요. 이 기기만 삭제하면 다른 기기와 iCloud는 남고 동기화·백업은 꺼집니다. iCloud 포함 삭제는 이 앱의 동기화 자료와 앱 백업도 지웁니다. 다른 기기는 삭제 안내를 확인해야 하며, 실패하면 완료로 보지 말고 상태를 확인하세요.</p>
+<h3>전체 앱 데이터 삭제가 원본 사진도 지우나요?</h3><p>아니요. Photos 원본과 사용자가 직접 내보낸 파일은 두 삭제 범위 모두에서 제외됩니다. 원본은 별도의 원본 사진 정리에서 사용자 선택과 iPhone 시스템 확인 후에만 삭제합니다. 카드 휴지통 복구는 앱 보관본을 복구하며 Photos 원본을 자동 복구하지 않습니다.</p>
 <h3>문의할 때 무엇을 보내야 하나요?</h3><p>앱 버전·빌드, iOS 버전, 문제가 발생한 화면과 재현 순서를 보내 주세요. 영수증, 주소, 번호, 바코드 등 민감정보는 가려 주세요.</p>
 <h2>관련 문서</h2><p><a href="index.html#ko">개인정보 처리방침 보기</a></p>
-<div class="footer"><p>© 2026 Studio JS. All rights reserved.</p><p>최종 수정일: 2026년 7월 30일</p></div>
+<div class="footer"><p>© 2026 Studio JS. All rights reserved.</p><p>최종 수정일: 2026년 9월 10일</p></div>
 </section>
 
 <section id="lang-en" class="lang"><h1>Support</h1><p>For questions, bug reports, or feature requests, contact us below.</p>
@@ -51,9 +56,14 @@ strong{color:var(--text)}a{color:var(--accent);text-underline-offset:3px}.footer
 <h3>The camera does not open.</h3><p>Enable SseuilSajin in iPhone Settings → Privacy & Security → Camera.</p>
 <h3>Recognition is wrong.</h3><p>Glare, angle, blur, or cropping can affect results. Edit dates, times, amounts, identifiers, and type before saving.</p>
 <h3>Notifications do not arrive.</h3><p>Check iPhone Settings → Notifications → SseuilSajin, Focus mode, and Scheduled Summary.</p>
-<h3>Where is data stored?</h3><p>The current TestFlight baseline stores cards and compact images locally on this iPhone and does not yet provide iCloud sync or automatic backup.</p>
+<h3>Where is data stored?</h3><p>Cards and app-stored images are saved locally. Enable private iCloud sync in Settings to sync devices on the same Apple Account. Recognition stays on device, without external AI or Studio JS data servers. Older builds may not include these features.</p>
+<h3>How is backup different from sync?</h3><p>Sync keeps current changes aligned. App backups are separate snapshots of earlier states. Check the automatic backup setting and last success; choose a verified backup, preview and confirm to restore. Connection or iCloud storage problems can prevent completion.</p>
+<h3>How do I load an iCloud-only photo?</h3><p>Choose the photos you want in the photo-finding download prompt. Only approved photos are requested through PhotoKit and analyzed on device. This does not enable card sync and may use network data.</p>
+<h3>How can I export my data?</h3><p>Use data export in Settings and choose a Files destination. The verified package includes cards, usage history, collections, app-stored images and integrity information. Exported files can be sensitive; choose their storage and recipients carefully.</p>
+<h3>How can I delete all app data?</h3><p>Choose the scope in Settings. Local deletion leaves other devices and iCloud unchanged and turns off sync/backup. Deletion including iCloud also removes this app's synced data and app backups. Other devices must acknowledge the deletion. Check completion after any failure.</p>
+<h3>Does app-data deletion remove my originals?</h3><p>No. Neither option deletes Photos originals or files you exported. Original-photo cleanup is separate and requires your action and the iPhone system confirmation. Restoring an app-trash card restores its app copy, not the Photos original.</p>
 <h3>What should I send to support?</h3><p>Include app version/build, iOS version, screen, and steps. Hide sensitive receipts, addresses, numbers, and barcodes.</p>
-<h2>Related</h2><p><a href="index.html#en">View Privacy Policy</a></p><div class="footer"><p>© 2026 Studio JS. All rights reserved.</p><p>Last updated: July 30, 2026</p></div></section>
+<h2>Related</h2><p><a href="index.html#en">View Privacy Policy</a></p><div class="footer"><p>© 2026 Studio JS. All rights reserved.</p><p>Last updated: September 10, 2026</p></div></section>
 
 <section id="lang-ja" class="lang"><h1>サポート</h1><p>お問い合わせ、不具合報告、機能提案は下記までご連絡ください。</p>
 <div class="contact"><ul style="margin-bottom:0"><li>メール：<a href="mailto:studiojeongsun@gmail.com">studiojeongsun@gmail.com</a></li><li>開発・運営：Studio JS</li><li>Apple ID: 6795992399</li><li>Bundle ID: com.sseuilsajin.app</li><li>返信：1～3営業日以内</li></ul></div>
@@ -64,9 +74,14 @@ strong{color:var(--text)}a{color:var(--accent);text-underline-offset:3px}.footer
 <h3>カメラが開きません。</h3><p>iPhone設定 → プライバシーとセキュリティ → カメラで쓰일사진を有効にしてください。</p>
 <h3>認識結果が間違っています。</h3><p>反射、傾き、ぼけ、切れた画像で結果が変わる場合があります。保存前に修正してください。</p>
 <h3>通知が届きません。</h3><p>iPhone設定 → 通知 → 쓰일사진、集中モード、通知要約を確認してください。</p>
-<h3>データはどこに保存されますか？</h3><p>現在のTestFlight基準版はカードと低容量画像をこのiPhone内に保存し、iCloud同期と自動バックアップはまだ提供していません。</p>
+<h3>データはどこに保存されますか？</h3><p>カードとアプリ保管画像は端末内に保存します。設定で個人iCloud同期を有効にすると同じAppleアカウントの端末間で同期します。認識は端末内で行い、外部AIやStudio JSデータサーバーへ送りません。以前のビルドには一部機能がありません。</p>
+<h3>同期とバックアップの違いは？</h3><p>同期は最新の変更を合わせます。アプリバックアップは過去の状態を保管する別のスナップショットです。自動バックアップ設定と最終成功を確認し、検証済みバックアップを選び、プレビュー後に確認して復元します。通信やiCloud容量により完了しない場合があります。</p>
+<h3>iCloudにしかない写真を読み込むには？</h3><p>写真を探す画面の読み込み案内で対象を選びます。承認した写真だけをPhotoKitで取得して端末内で分析します。カード同期を有効にする操作ではなく、通信量が発生する場合があります。</p>
+<h3>データを書き出すには？</h3><p>設定のデータ書き出しからFilesの保存先を選びます。カード、使用履歴、保管庫、アプリ保管画像と整合性情報を含みます。機密情報を含む場合があるため保存先と共有相手を確認してください。</p>
+<h3>アプリデータをすべて削除するには？</h3><p>設定で範囲を選びます。この端末のみの削除は他の端末とiCloudを維持し、同期・バックアップをオフにします。iCloudを含む削除はこのアプリの同期資料とバックアップも削除します。他の端末では削除の確認が必要です。失敗した場合は完了状態を確認してください。</p>
+<h3>アプリデータ削除で元写真も消えますか？</h3><p>いいえ。Photosの元写真と書き出したファイルは両方の削除範囲から除外します。元写真の整理は別操作で、ユーザーの選択とiPhoneのシステム確認が必要です。カード復元はアプリ保管画像を復元し、Photosの元写真を自動復元しません。</p>
 <h3>問い合わせ時に必要な情報は？</h3><p>アプリのバージョン・ビルド、iOSバージョン、画面、再現手順をお送りください。機密情報は隠してください。</p>
-<h2>関連文書</h2><p><a href="index.html#ja">プライバシーポリシーを見る</a></p><div class="footer"><p>© 2026 Studio JS. All rights reserved.</p><p>最終更新日：2026年7月30日</p></div></section>
+<h2>関連文書</h2><p><a href="index.html#ja">プライバシーポリシーを見る</a></p><div class="footer"><p>© 2026 Studio JS. All rights reserved.</p><p>最終更新日：2026年9月10日</p></div></section>
 </main>
 <script>
 function setLang(lang,btn){

@@ -23,8 +23,8 @@ strong{color:var(--text)}a{color:var(--accent);text-underline-offset:3px}.footer
 <div class="tabs"><button class="tab active" data-lang="ko" onclick="setLang('ko',this)">🇰🇷 한국어</button><button class="tab" data-lang="en" onclick="setLang('en',this)">🇺🇸 English</button><button class="tab" data-lang="ja" onclick="setLang('ja',this)">🇯🇵 日本語</button></div>
 
 <section id="lang-ko" class="lang active">
-<h1>개인정보 처리방침</h1><p>시행일: 2026년 7월 30일</p>
-<div class="notice">이 방침은 현재 TestFlight 기준 기능을 반영합니다. iCloud 동기화, 가족 공유, 위젯, 유료 기능 등 새로운 데이터 처리 기능이 실제 빌드에 추가되면 공개 전에 갱신합니다.</div>
+<h1>개인정보 처리방침</h1><p>시행일: 2026년 9월 10일</p>
+<div class="notice">이 방침은 1.0 통합 후보의 데이터 처리를 반영합니다. 기기 내 인식, 선택적 개인 iCloud 동기화, 별도의 앱 백업·복구, 내보내기와 삭제 범위를 설명합니다. 이전 빌드에서는 일부 기능이 보이지 않을 수 있습니다.</div>
 <h2>1. 앱과 운영자</h2>
 <p>쓰일사진은 앞으로 사용할 목적이 있는 사진을 찾아 정리하고, 필요한 날짜에 다시 꺼내 쓰며, 용도가 끝난 원본 사진을 안전하게 정리하도록 돕는 iOS 앱입니다.</p>
 <ul><li>운영 및 개발: <strong>Studio JS</strong></li><li>Apple ID: <strong>6795992399</strong></li><li>Bundle ID: <strong>com.sseuilsajin.app</strong></li><li>이메일: <a href="mailto:studiojeongsun@gmail.com">studiojeongsun@gmail.com</a></li></ul>
@@ -36,68 +36,72 @@ strong{color:var(--text)}a{color:var(--accent);text-underline-offset:3px}.footer
 <li>촬영일, 추가일, 이미지 크기, 픽셀 정보, 스크린샷 여부 등 iOS 메타데이터</li>
 <li>사용자가 확정·수정한 카드 제목, 유형, 사용일, 알림일, 정리일, 메모</li>
 <li>카드 표시용 저용량 이미지와 썸네일, 로컬 알림 예약 정보</li>
+<li>사용자가 기록한 금액·횟수·사용 기간, 사용 기록, 영수증 보관함과 분류 관계</li>
 </ul>
 <h2>3. 처리 목적</h2>
 <ul><li>영수증, 쿠폰, 티켓, 예약, 반품·환불, 보증·AS 사진의 용도와 주요 정보 제안</li><li>사용일·만료일·알림일·정리일 관리</li><li>QR·바코드·번호·좌석·시간·장소·원본 이미지 표시</li><li>저용량 카드 생성과 원본 사진 정리 지원</li><li>로컬 알림 예약·수정·취소 및 고객 지원</li></ul>
 <h2>4. 기기 내 처리와 외부 전송</h2>
-<p><strong>사진 분석과 카드 데이터 처리는 원칙적으로 사용자의 기기 안에서 이루어집니다.</strong></p>
+<p><strong>OCR·QR·바코드 인식과 분류는 기기 안에서 처리합니다. 사용자가 iCloud를 켜면 카드와 앱 보관 이미지 등 동기화 대상 자료가 Apple의 개인 CloudKit 데이터베이스로 전송·보관됩니다.</strong> Studio JS는 자체 데이터 서버를 운영하지 않으며 사용자의 개인 CloudKit 자료를 열람하지 않습니다.</p>
 <ul><li>Apple Vision, VisionKit, PhotoKit과 iOS 시스템 기능을 사용합니다.</li><li>현재 버전은 사진 원본, OCR 결과 또는 바코드 값을 Studio JS의 외부 서버로 업로드하지 않습니다.</li><li>외부 AI 서비스에 사진이나 OCR 내용을 전송하지 않습니다.</li><li>맞춤형 광고 추적을 사용하지 않고 사용자 데이터를 판매하지 않습니다.</li><li>현재 버전은 제3자 분석·광고 SDK를 사용하지 않습니다.</li></ul>
 <h2>5. 저장 위치와 보유 기간</h2>
-<ul><li>카드, 확정 정보, 저용량 이미지와 설정은 앱의 로컬 저장공간에 보관됩니다.</li><li>사용자가 앱 안에서 삭제하거나 앱을 삭제할 때까지 보관됩니다.</li><li>현재 버전은 iCloud 동기화, 자동 백업, 가족 데이터 공유를 제공하지 않습니다.</li><li>앱 삭제 시 기기에만 저장된 데이터는 복구할 수 없습니다.</li></ul>
+<ul><li>카드와 앱 보관 이미지는 로컬에 저장합니다. 설정에서 개인 iCloud 동기화를 켜면 같은 Apple 계정의 기기 사이에서 동기화합니다. 로컬 모드도 사용할 수 있습니다.</li><li>앱 백업은 실시간 동기화와 별도의 스냅샷입니다. 자동 백업은 사용자 설정에 따라 실행되며, 복구는 사용자가 검증된 백업을 선택하고 확인한 뒤 진행합니다. iCloud 연결·용량·백업 상태에 따라 이용이 제한될 수 있습니다.</li><li>카드 휴지통은 실제 이동 시점부터 14일 동안 복구할 수 있습니다. 조건을 충족한 일회성 카드만 자동 정리되며 Photos 원본 삭제와는 별개입니다.</li><li>위젯은 같은 기기의 앱 공유 저장공간에 있는 표시용 자료를 사용합니다. 위젯이나 최소 App Intents를 위해 별도의 외부 서버에 자료를 전송하지 않습니다.</li><li>앱을 제거하면 기기에만 있던 자료는 사라집니다. 기존 iCloud 자료나 사용자가 내보낸 파일은 앱 제거만으로 삭제되지 않습니다. 가족 카드 공유는 제공하지 않습니다.</li></ul>
 <h2>6. 사진·카메라·알림 권한</h2>
 <p>사용자가 허용하거나 직접 선택한 사진만 처리합니다. 카메라는 직접 촬영에만 사용하고, 사진 추가 권한은 사용자가 촬영본을 사진 앱에도 저장하기로 선택한 경우에만 사용합니다. 알림 권한은 로컬 알림 예약에 사용합니다. 모든 권한은 iPhone 설정에서 변경할 수 있습니다.</p>
+<p>사진이 iCloud Photos에만 있으면 사용자가 불러오기를 선택한 사진에 한해 PhotoKit 네트워크 요청을 허용합니다. 이는 카드 iCloud 동기화와 다른 기능입니다. 다운로드에는 네트워크 데이터가 쓰이며, 작은 미리보기를 요청해도 다운로드량이 작다고 보장하지 않습니다.</p>
 <h2>7. 원본 사진 삭제와 저장공간</h2>
 <ul><li>원본 삭제는 사용자의 명시적 확인 후 Apple Photos의 시스템 절차로만 요청합니다.</li><li>앱이 사진을 자동으로 영구 삭제하지 않습니다.</li><li>삭제 사진은 Apple 사진 앱의 ‘최근 삭제된 항목’에 최대 30일 남을 수 있습니다.</li><li>쓰일사진은 ‘최근 삭제된 항목’을 임의로 비울 수 없습니다.</li><li>절감 용량은 예상값일 수 있으며 실제 반영 시점은 iOS와 iCloud 상태에 따라 달라질 수 있습니다.</li></ul>
 <h2>8. 자동 인식 결과</h2>
 <p>자동 인식과 분류 결과는 제안이며 완전한 정확성을 보장하지 않습니다. 사용자는 저장 전에 결과를 확인하고 수정할 수 있습니다. 중요한 날짜, 금액, 번호와 정책은 원본 또는 발행처를 함께 확인해야 합니다.</p>
 <h2>9. 제3자 공유</h2>
-<p>현재 버전은 사진이나 카드 데이터를 Studio JS 서버 또는 제3자에게 제공하지 않습니다. 사용자가 iOS 공유 기능으로 직접 내보낸 경우에는 선택한 대상의 정책이 적용됩니다.</p>
+<p>선택적 개인 동기화와 앱 백업에는 Apple iCloud/CloudKit을 사용하며 Apple의 서비스 정책이 적용됩니다. Studio JS의 자체 서버, 광고 업체 또는 외부 AI에 사진·카드 내용을 제공하지 않습니다. 사용자가 자료를 파일로 내보내거나 공유한 경우에는 선택한 저장 위치와 수신자의 정책이 적용됩니다.</p>
 <h2>10. 이용자 권리와 삭제</h2>
-<ul><li>카드와 후보 정보 확인·수정·삭제</li><li>앱 내부 이미지 삭제</li><li>로컬 알림 수정·취소</li><li>사진·카메라·알림 권한 철회</li><li>앱 삭제를 통한 기기 내 앱 데이터 삭제</li></ul>
+<ul><li>카드 확인·수정, 카드 휴지통 이동·복구, 알림 수정·취소 및 권한 철회</li><li>설정에서 카드·사용 기록·보관함·앱 보관 이미지 등을 검증된 파일로 내보내기</li><li>이 기기 데이터만 삭제: 기기 안의 앱 자료·관련 설정·알림·위젯 표시를 정리하고 동기화/백업을 끕니다. 다른 기기와 iCloud 자료는 유지합니다. 나중에 사용자가 다시 연결하면 자료가 내려올 수 있습니다.</li><li>iCloud 포함 삭제: 사용자 확인 뒤 해당 앱의 동기화 자료와 앱 백업을 삭제하고 이 기기의 앱 자료를 정리합니다. 다른 기기는 삭제 사실을 확인하기 전 오래된 자료를 다시 업로드하지 못하도록 보호합니다. 실패·오프라인 상태에서는 삭제 완료를 확인해야 합니다.</li><li>어느 전체 앱 데이터 삭제 방식도 Photos 원본이나 사용자가 직접 내보낸 파일을 지우지 않습니다. 해당 파일은 사용자가 저장한 위치에서 별도로 관리합니다.</li></ul>
 <h2>11. 보안 및 아동 개인정보</h2>
 <p>앱은 iOS 앱 샌드박스, 시스템 권한과 데이터 보호 기능을 사용합니다. 별도 회원가입이나 Studio JS 서버 계정을 요구하지 않으며, 아동 개인정보를 별도로 수집하도록 설계되지 않았습니다.</p>
 <h2>12. 방침 변경</h2><p>기능, 법령 또는 처리 방식이 변경되면 방침을 갱신하고 시행일을 표시합니다.</p>
 <h2>13. 개인정보 보호 문의</h2>
 <div class="contact"><ul style="margin-bottom:0"><li>상호: Studio JS</li><li>이메일: <a href="mailto:studiojeongsun@gmail.com">studiojeongsun@gmail.com</a></li></ul></div>
-<div class="footer"><p>© 2026 Studio JS. All rights reserved.</p><p>최종 수정일: 2026년 7월 30일</p><p><a href="support.html#ko">고객 지원 보기</a></p></div>
+<div class="footer"><p>© 2026 Studio JS. All rights reserved.</p><p>최종 수정일: 2026년 9월 10일</p><p><a href="support.html#ko">고객 지원 보기</a></p></div>
 </section>
 
 <section id="lang-en" class="lang">
-<h1>Privacy Policy</h1><p>Effective date: July 30, 2026</p>
-<div class="notice">This policy reflects the current TestFlight baseline and will be updated before release when new data-processing features are added.</div>
+<h1>Privacy Policy</h1><p>Effective date: September 10, 2026</p>
+<div class="notice">This policy covers the integrated 1.0 candidate: on-device recognition, optional private iCloud sync, separate app backup and restore, export, and deletion. Some features may not appear in older builds.</div>
 <h2>1. App and Operator</h2><p>SseuilSajin helps users organize photos they intend to use, bring them back at the right time, and safely clean up originals when their purpose is complete.</p><ul><li>Operator and developer: <strong>Studio JS</strong></li><li>Apple ID: <strong>6795992399</strong></li><li>Bundle ID: <strong>com.sseuilsajin.app</strong></li><li>Email: <a href="mailto:studiojeongsun@gmail.com">studiojeongsun@gmail.com</a></li></ul>
 <h2>2. Information Processed</h2><ul><li>Photos selected or permitted by the user and in-app camera captures</li><li>Recognized text, dates, times, merchants, amounts, order/reservation numbers, seats, venues, product/model/serial information</li><li>QR and barcode values</li><li>iOS metadata such as dates, dimensions, size, and screenshot status</li><li>User-confirmed card titles, types, use/reminder/cleanup dates, notes, compact images, thumbnails, and local notification data</li></ul>
 <h2>3. Purposes</h2><p>To suggest key details, manage use and expiration dates, display codes and source images, create compact cards, support original-photo cleanup, schedule local notifications, and provide support.</p>
-<h2>4. On-Device Processing</h2><ul><li>The app uses Apple Vision, VisionKit, PhotoKit, and iOS system features.</li><li>The current version does not upload original photos, OCR results, or barcode values to Studio JS servers or external AI services.</li><li>It does not use cross-app advertising tracking, sell user data, or include third-party analytics/advertising SDKs.</li></ul>
-<h2>5. Storage and Retention</h2><p>Cards, compact images, and settings are stored locally until deleted in the app or the app is uninstalled. The current version does not provide iCloud sync, automatic backup, or family data sharing; locally stored data may not be recoverable after uninstall.</p>
+<h2>4. On-Device Processing and Transfers</h2><ul><li>OCR, QR/barcode recognition and classification run on device using Apple frameworks.</li><li>If the user enables iCloud, eligible cards, app-stored images, user-entered balances/counts/periods and usage history, and receipt collections are transmitted to and stored in the user's private CloudKit database for sync. Studio JS operates no data server and does not access these private records.</li><li>Original photos, OCR results and codes are not uploaded to Studio JS servers or external AI services. The app does not use advertising tracking, sell user data or include third-party analytics/advertising SDKs.</li></ul>
+<h2>5. Storage and Retention</h2><ul><li>Local storage remains available. Optional private iCloud sync connects devices using the same Apple Account.</li><li>App backups are separate snapshots, not live sync. Automatic backup follows the user's setting; restore requires selecting and confirming a verified backup. Connectivity, iCloud storage and backup status can limit availability.</li><li>Cards in the app's trash can be restored for 14 days from entry. Only eligible single-use cards are automatically moved there; this does not delete Photos originals.</li><li>Widgets use a display projection in the app's on-device shared storage. Widgets and minimal App Intents do not use an additional external data server.</li><li>Uninstalling removes local-only data, but does not itself delete existing iCloud data or files the user exported. Family card sharing is not provided.</li></ul>
 <h2>6. Permissions</h2><p>The app processes only photos the user allows or selects. Camera access is used for capture, Add-to-Photos only when the user chooses to save a capture, and notification permission for local reminders. Permissions can be changed in iPhone Settings.</p>
+<p>For photos available only in iCloud Photos, the app enables PhotoKit network access only for photos the user chooses to load. This is separate from card sync. Downloads use network data; requesting a small preview does not guarantee a small download.</p>
 <h2>7. Original Photo Deletion</h2><ul><li>Deletion is requested through Apple Photos only after explicit confirmation.</li><li>The app does not automatically permanently delete photos.</li><li>Deleted photos may remain in Recently Deleted for up to 30 days, which the app cannot empty.</li><li>Storage savings may be estimates and actual reclamation timing may vary.</li></ul>
 <h2>8. Recognition Results</h2><p>Recognition and classification results are suggestions and may be inaccurate. Users can review and edit them before saving and should verify important dates, amounts, identifiers, and policies with the source.</p>
-<h2>9. Third-Party Sharing</h2><p>The current version does not provide photos or card data to Studio JS servers or third parties. If the user explicitly exports content through the iOS share sheet, the destination's policies apply.</p>
-<h2>10. User Choices</h2><p>Users can review, edit, and delete cards, cancel reminders, revoke permissions, and remove locally stored data by uninstalling the app.</p>
+<h2>9. Service Providers and Sharing</h2><p>Optional private sync and app backup use Apple iCloud/CloudKit under Apple's service policies. Photo and card contents are not provided to Studio JS servers, advertisers or external AI. When the user exports or shares files, the chosen destination's and recipient's policies apply.</p>
+<h2>10. User Choices and Deletion</h2><ul><li>Review or edit cards, move them to trash or restore them, change reminders and revoke permissions.</li><li>Export cards, usage history, collections and app-stored images as verified files in Settings.</li><li>Local deletion removes this device's app data and related settings, notifications and widget display, and turns off sync/backup. Other devices and iCloud remain unchanged. Explicitly reconnecting later can download those records again.</li><li>Deletion including iCloud removes this app's synced data and app backups after confirmation, then clears local app data. Other devices are protected from re-uploading stale records pending acknowledgment. If offline or a step fails, check that deletion actually completes.</li><li>Neither app-data deletion option deletes Photos originals or files the user exported. Manage exported files separately at their chosen location.</li></ul>
 <h2>11. Security and Children</h2><p>The app relies on the iOS sandbox, permissions, and data protection. It requires no Studio JS account and is not designed to separately collect children's personal data.</p>
 <h2>12. Changes</h2><p>This policy will be updated when features, laws, or processing practices change.</p>
 <h2>13. Contact</h2><div class="contact"><ul style="margin-bottom:0"><li>Company: Studio JS</li><li>Email: <a href="mailto:studiojeongsun@gmail.com">studiojeongsun@gmail.com</a></li></ul></div>
-<div class="footer"><p>© 2026 Studio JS. All rights reserved.</p><p>Last updated: July 30, 2026</p><p><a href="support.html#en">View Support</a></p></div>
+<div class="footer"><p>© 2026 Studio JS. All rights reserved.</p><p>Last updated: September 10, 2026</p><p><a href="support.html#en">View Support</a></p></div>
 </section>
 
 <section id="lang-ja" class="lang">
-<h1>プライバシーポリシー</h1><p>施行日：2026年7月30日</p>
-<div class="notice">本方針は現在のTestFlight基準版を反映しています。新しいデータ処理機能が追加された場合、公開前に更新します。</div>
+<h1>プライバシーポリシー</h1><p>施行日：2026年9月10日</p>
+<div class="notice">本方針は1.0統合候補版の端末内認識、任意の個人iCloud同期、別のアプリバックアップ・復元、書き出しと削除を説明します。以前のビルドでは一部機能が表示されない場合があります。</div>
 <h2>1. アプリと運営者</h2><p>쓰일사진（SseuilSajin）は、今後使用する写真を整理し、必要な時に利用し、役目を終えた元写真を安全に整理するiOSアプリです。</p><ul><li>運営・開発：<strong>Studio JS</strong></li><li>Apple ID: <strong>6795992399</strong></li><li>Bundle ID: <strong>com.sseuilsajin.app</strong></li><li>メール：<a href="mailto:studiojeongsun@gmail.com">studiojeongsun@gmail.com</a></li></ul>
 <h2>2. 処理する情報</h2><ul><li>ユーザーが選択・許可した写真とアプリ内カメラ画像</li><li>文字、日付、時間、店舗名、金額、注文・予約番号、座席、場所、製品・モデル・シリアル情報</li><li>QR・バーコード値、iOSメタデータ</li><li>ユーザーが確定したカード情報、低容量画像、サムネイル、ローカル通知情報</li></ul>
 <h2>3. 利用目的</h2><p>主要情報の提案、使用日・期限管理、コードと元画像の表示、低容量カード作成、元写真整理、ローカル通知、サポートのために使用します。</p>
-<h2>4. 端末内処理</h2><ul><li>Apple Vision、VisionKit、PhotoKit、iOS機能を使用します。</li><li>現在のバージョンは元写真、OCR結果、バーコード値をStudio JSサーバーや外部AIへ送信しません。</li><li>広告追跡、データ販売、第三者分析・広告SDKを使用しません。</li></ul>
-<h2>5. 保存</h2><p>カード、低容量画像、設定は端末内に保存され、アプリ内削除またはアンインストールまで保持されます。現在のバージョンはiCloud同期、自動バックアップ、家族共有を提供しません。</p>
+<h2>4. 端末内処理と送信</h2><ul><li>OCR、QR・バーコード認識、分類はAppleの機能で端末内処理します。</li><li>ユーザーがiCloudを有効にすると、対象カード、アプリ保管画像、入力した金額・回数・期間と使用履歴、レシート保管庫を個人のCloudKitデータベースに送信・保存します。Studio JSは独自データサーバーを運営せず、この個人データを閲覧しません。</li><li>元写真、OCR結果、コードをStudio JSサーバーや外部AIへ送信しません。広告追跡、データ販売、第三者分析・広告SDKを使用しません。</li></ul>
+<h2>5. 保存と保持期間</h2><ul><li>ローカル保存を利用できます。任意の個人iCloud同期は同じAppleアカウントの端末間で動作します。</li><li>アプリバックアップは同期とは別のスナップショットです。自動バックアップはユーザー設定に従い、復元は検証済みバックアップを選択・確認して実行します。通信、iCloud容量、バックアップ状態により利用できない場合があります。</li><li>カードのゴミ箱は移動時点から14日間復元できます。条件を満たす使い切りカードのみ自動整理し、Photosの元写真は削除しません。</li><li>ウィジェットは端末内のアプリ共有領域にある表示用データを使用します。ウィジェットと最小App Intentsのための別の外部データサーバーはありません。</li><li>アンインストールで端末内だけのデータは失われますが、既存iCloudデータや書き出したファイルは自動削除されません。家族カード共有は提供しません。</li></ul>
 <h2>6. 権限</h2><p>許可・選択された写真のみを処理します。カメラは撮影、写真追加はユーザーが保存を選択した場合、通知はローカル通知に使用します。権限はiPhone設定で変更できます。</p>
+<p>iCloud Photosにのみある写真は、ユーザーが読み込みを選択した写真に限ってPhotoKitのネットワーク要求を許可します。カード同期とは別の機能です。通信量が発生し、小さなプレビュー要求でもダウンロード量が小さいとは限りません。</p>
 <h2>7. 元写真の削除</h2><ul><li>明示的確認後にApple Photosを通じてのみ削除を要求します。</li><li>自動完全削除はしません。</li><li>削除写真は「最近削除した項目」に最大30日残る場合があり、アプリが代わりに空にすることはできません。</li><li>容量削減は推定値の場合があります。</li></ul>
 <h2>8. 認識結果</h2><p>認識・分類は提案であり誤る場合があります。保存前に確認・修正し、重要な日付・金額・番号・条件は元資料でも確認してください。</p>
-<h2>9. 第三者共有</h2><p>現在のバージョンは写真・カードデータをStudio JSサーバーや第三者へ提供しません。ユーザーが明示的に共有した場合は送信先の方針が適用されます。</p>
-<h2>10. 利用者の選択</h2><p>カードの確認・修正・削除、通知取消、権限撤回、アプリ削除によるローカルデータ削除が可能です。</p>
+<h2>9. 外部サービスと共有</h2><p>任意の個人同期とアプリバックアップはApple iCloud/CloudKitを利用し、Appleの方針が適用されます。写真・カード内容をStudio JSサーバー、広告事業者、外部AIへ提供しません。ユーザーが書き出し・共有した場合は保存先と受信者の方針が適用されます。</p>
+<h2>10. 利用者の選択と削除</h2><ul><li>カードの確認・修正、ゴミ箱移動・復元、通知変更、権限撤回が可能です。</li><li>設定からカード、使用履歴、保管庫、アプリ保管画像を検証済みファイルとして書き出せます。</li><li>この端末のみ削除すると、端末のアプリ資料・関連設定・通知・ウィジェット表示を整理し、同期とバックアップをオフにします。他の端末とiCloudは維持され、後で明示的に再接続すると再取得できます。</li><li>iCloudを含む削除は、確認後にこのアプリの同期資料とアプリバックアップを削除し、ローカル資料も整理します。他の端末は削除を確認するまで古い資料の再送信を防ぎます。通信不良や失敗時は削除完了を確認してください。</li><li>いずれのアプリデータ削除もPhotosの元写真や書き出したファイルを削除しません。書き出し先で別途管理してください。</li></ul>
 <h2>11. セキュリティと子ども</h2><p>iOSサンドボックス、権限、データ保護を使用します。Studio JSアカウントは不要で、子どもの個人情報を別途収集するよう設計されていません。</p>
 <h2>12. 変更</h2><p>機能、法令、処理方法が変わった場合は本方針を更新します。</p>
 <h2>13. お問い合わせ</h2><div class="contact"><ul style="margin-bottom:0"><li>運営：Studio JS</li><li>メール：<a href="mailto:studiojeongsun@gmail.com">studiojeongsun@gmail.com</a></li></ul></div>
-<div class="footer"><p>© 2026 Studio JS. All rights reserved.</p><p>最終更新日：2026年7月30日</p><p><a href="support.html#ja">サポートを見る</a></p></div>
+<div class="footer"><p>© 2026 Studio JS. All rights reserved.</p><p>最終更新日：2026年9月10日</p><p><a href="support.html#ja">サポートを見る</a></p></div>
 </section>
 </main>
 <script>
