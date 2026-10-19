@@ -6,7 +6,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic 
 .container{max-width:720px;margin:auto}
 .hero{border:1px solid var(--line);background:linear-gradient(145deg,#183653,#12253a);border-radius:20px;padding:22px;margin-bottom:22px}
 .brand{display:flex;align-items:center;gap:14px}.mark-logo{width:56px;height:56px;border-radius:14px;display:block;object-fit:cover;box-shadow:0 6px 20px rgba(0,0,0,.18)}
-.eyebrow{font-size:12px;letter-spacing:.1em;color:var(--accent);font-weight:700}h1{font-size:25px;letter-spacing:-.02em} .subtitle{font-size:14px;color:var(--muted)}
+.eyebrow{font-size:12px;letter-spacing:.1em;color:var(--accent);font-weight:700}h1{font-size:25px;letter-spacing:0} .subtitle{font-size:14px;color:var(--muted)}
 .tabs{display:flex;gap:8px;margin:0 0 22px;border-bottom:1px solid var(--line);padding-bottom:15px}
 .tab{flex:1;padding:10px 8px;border:1px solid var(--line);border-radius:10px;background:transparent;color:var(--muted);cursor:pointer}
 .tab.active{border-color:var(--brand);background:rgba(126,181,238,.14);color:var(--text);font-weight:700}
@@ -15,7 +15,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic 
 .notice{border-color:rgba(243,166,99,.38);color:#f7cda9;background:rgba(243,166,99,.08)}
 h2{font-size:18px;color:var(--brand);margin:32px 0 11px;border-left:3px solid var(--accent);padding-left:11px}
 h3{font-size:15px;margin:19px 0 7px}p{font-size:15px;color:var(--muted);margin-bottom:11px}ul{padding-left:20px;margin-bottom:11px}li{font-size:14px;color:var(--muted);margin-bottom:6px}
-strong{color:var(--text)}a{color:var(--accent);text-underline-offset:3px}.footer{margin-top:44px;padding-top:20px;border-top:1px solid var(--line)}.footer p{font-size:12px;color:#71869a;margin-bottom:4px}
+strong{color:var(--text)}a{color:var(--accent);text-underline-offset:3px;overflow-wrap:anywhere}.footer{margin-top:44px;padding-top:20px;border-top:1px solid var(--line)}.footer p{font-size:12px;color:#71869a;margin-bottom:4px}
 .badge{display:inline-block;font-size:12px;font-weight:700;color:#93d6aa;background:rgba(147,214,170,.1);padding:4px 8px;border-radius:999px;margin-bottom:8px}
 @media(max-width:520px){body{padding:14px}.hero{padding:18px}h1{font-size:22px}.tab{font-size:12px;padding:9px 4px}p{font-size:14px}}
 </style></head><body><main class="container">
@@ -29,6 +29,10 @@ strong{color:var(--text)}a{color:var(--accent);text-underline-offset:3px}.footer
 <div class="card"><span class="badge">카드 만들기</span><p>추가 버튼에서 사진 찍기, 사진에서 가져오기 또는 사진에서 찾기를 선택하세요. 자동으로 찾은 정보는 저장 전에 확인하고 수정할 수 있습니다.</p></div>
 <div class="card"><span class="badge">현장에서 사용</span><p>카드 상세에서 앱 보관 이미지와 QR·바코드를 확대하고 번호, 좌석, 시간과 장소를 확인하세요. 보관본은 원본과 화질이 다를 수 있습니다.</p></div>
 <div class="card"><span class="badge">원본 정리</span><p>저장한 보관본의 작은 글씨와 코드가 충분히 선명한지 확인한 뒤에만 원본 삭제를 선택하세요. 불확실하면 원본을 보관하세요. 삭제에는 앱과 iOS 확인이 필요하며, 사진은 Apple ‘최근 삭제된 항목’에 최대 30일 남을 수 있습니다.</p></div>
+<h2>무료 이용과 Pro</h2>
+<p>영수증·보증서를 포함한 활성 카드 5장까지 기간 제한 없이 무료입니다. 사용 완료한 카드와 카드 휴지통은 한도에 포함하지 않습니다. Pro 월간·연간 자동 갱신 구독은 같은 기능으로 활성 카드 수 제한을 해제합니다. 실제 지역별 가격과 청구 주기는 앱의 Pro 화면과 Apple 결제 화면에서 확인하세요. 영구 구매나 별도 무료 체험은 없습니다.</p>
+<p>한도는 신규 저장에만 적용됩니다. 구독이 끝나도 기존 자료의 조회·검색·수정·사용·정리·복구·내보내기는 계속할 수 있습니다. 해지해도 남은 이용 기간은 유지됩니다. 오늘 → 설정 → Pro에서 구매 복원과 구독 관리를 이용하세요. 갱신·결제·해지는 Apple에서 관리하며, 앱 삭제만으로 구독이 해지되지는 않습니다.</p>
+<p>취소하지 않으면 선택한 주기로 자동 갱신됩니다. <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple 표준 이용약관</a>이 적용됩니다.</p>
 <h2>자주 묻는 질문</h2>
 <h3>사진이 보이지 않아요.</h3><p>iPhone 설정 → 개인정보 보호 및 보안 → 사진 → 쓰일사진에서 접근 범위를 확인하세요.</p>
 <h3>카메라가 열리지 않아요.</h3><p>iPhone 설정 → 개인정보 보호 및 보안 → 카메라 → 쓰일사진을 켜 주세요.</p>
@@ -45,7 +49,7 @@ strong{color:var(--text)}a{color:var(--accent);text-underline-offset:3px}.footer
 <h3>전체 앱 데이터 삭제가 원본 사진도 지우나요?</h3><p>아니요. Photos 원본과 사용자가 직접 내보낸 파일은 두 삭제 범위 모두에서 제외됩니다. 원본은 별도의 원본 사진 정리에서 사용자 선택과 iPhone 시스템 확인 후에만 삭제합니다. 카드 휴지통 복구는 앱 보관본을 복구하며 Photos 원본을 자동 복구하지 않습니다.</p>
 <h3>문의할 때 무엇을 보내야 하나요?</h3><p>앱 버전·빌드, iOS 버전, 문제가 발생한 화면과 재현 순서를 보내 주세요. 영수증, 주소, 번호, 바코드 등 민감정보는 가려 주세요.</p>
 <h2>관련 문서</h2><p><a href="index.html#ko">개인정보 처리방침 보기</a></p>
-<div class="footer"><p>© 2026 Studio JS. All rights reserved.</p><p>최종 수정일: 2026년 10월 8일</p></div>
+<div class="footer"><p>© 2026 Studio JS. All rights reserved.</p><p>최종 수정일: 2026년 10월 20일</p></div>
 </section>
 
 <section id="lang-en" class="lang"><h1>Support</h1><p>For questions, bug reports, or feature requests, contact us below.</p>
@@ -53,6 +57,10 @@ strong{color:var(--text)}a{color:var(--accent);text-underline-offset:3px}.footer
 <h2>Quick Help</h2><div class="card"><span class="badge">Create a card</span><p>Use the add button to capture, import from Photos, or scan your photo library. Review recognized details before saving.</p></div>
 <div class="card"><span class="badge">Use on site</span><p>Open a card to enlarge its app-stored image and QR/barcode, and check numbers, seats, times, and venues. The stored copy may differ in quality from the original.</p></div>
 <div class="card"><span class="badge">Clean up originals</span><p>Check that small text and codes in the stored copy are clear enough before choosing to delete an original. Keep the original if unsure. Deletion needs in-app and iOS confirmation; photos may remain in Recently Deleted for up to 30 days.</p></div>
+<h2>Free Use and Pro</h2>
+<p>Up to 5 active cards, including receipts and warranties, are free without a time limit. Completed cards and Card Trash do not count. Monthly and yearly auto-renewing Pro subscriptions offer the same unlimited-active-card benefit. Check localized prices and billing periods in Pro and Apple's payment sheet. No lifetime purchase or separate free trial is offered.</p>
+<p>The limit applies only to new saving. After expiry, existing data remains available for viewing, search, editing, use, cleanup, recovery and export. Cancellation keeps the remaining paid period. Open Today → Settings → Pro for Restore Purchases and Manage Subscriptions. Apple manages renewal, billing and cancellation; deleting the app does not cancel a subscription.</p>
+<p>Unless cancelled, the subscription renews automatically at the selected interval. <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple's Standard EULA</a> applies.</p>
 <h2>FAQ</h2><h3>Photos do not appear.</h3><p>Review iPhone Settings → Privacy & Security → Photos → SseuilSajin.</p>
 <h3>The camera does not open.</h3><p>Enable SseuilSajin in iPhone Settings → Privacy & Security → Camera.</p>
 <h3>Recognition is wrong.</h3><p>Glare, angle, blur, or cropping can affect results. Edit dates, times, amounts, identifiers, and type before saving.</p>
@@ -65,13 +73,17 @@ strong{color:var(--text)}a{color:var(--accent);text-underline-offset:3px}.footer
 <h3>How can I delete all app data?</h3><p>Choose the scope in Settings. Local deletion leaves other devices and iCloud unchanged and turns off sync/backup. Deletion including iCloud also removes this app's synced data and app backups. Other devices must acknowledge the deletion. Check completion after any failure.</p>
 <h3>Does app-data deletion remove my originals?</h3><p>No. Neither option deletes Photos originals or files you exported. Original-photo cleanup is separate and requires your action and the iPhone system confirmation. Restoring an app-trash card restores its app copy, not the Photos original.</p>
 <h3>What should I send to support?</h3><p>Include app version/build, iOS version, screen, and steps. Hide sensitive receipts, addresses, numbers, and barcodes.</p>
-<h2>Related</h2><p><a href="index.html#en">View Privacy Policy</a></p><div class="footer"><p>© 2026 Studio JS. All rights reserved.</p><p>Last updated: October 8, 2026</p></div></section>
+<h2>Related</h2><p><a href="index.html#en">View Privacy Policy</a></p><div class="footer"><p>© 2026 Studio JS. All rights reserved.</p><p>Last updated: October 20, 2026</p></div></section>
 
 <section id="lang-ja" class="lang"><h1>サポート</h1><p>お問い合わせ、不具合報告、機能提案は下記までご連絡ください。</p>
 <div class="contact"><ul style="margin-bottom:0"><li>メール：<a href="mailto:studiojeongsun@gmail.com">studiojeongsun@gmail.com</a></li><li>開発・運営：Studio JS</li><li>Apple ID: 6795992399</li><li>Bundle ID: com.sseuilsajin.app</li><li>返信：1～3営業日以内</li></ul></div>
 <h2>クイックヘルプ</h2><div class="card"><span class="badge">カード作成</span><p>追加ボタンから撮影、写真読み込み、写真ライブラリ診断を選択し、保存前に結果を確認してください。</p></div>
 <div class="card"><span class="badge">現場で使用</span><p>カード詳細でアプリ保管画像とQR・バーコードを拡大し、番号、座席、時間、場所を確認できます。保管画像は元写真と画質が異なる場合があります。</p></div>
 <div class="card"><span class="badge">元写真の整理</span><p>保管画像の小さな文字とコードが十分に読めることを確認してから、元写真の削除を選んでください。不確かな場合は元写真を残してください。アプリとiOSでの確認が必要で、削除写真は「最近削除した項目」に最大30日残る場合があります。</p></div>
+<h2>無料利用とPro</h2>
+<p>レシート・保証書を含む有効なカード5枚まで、期間制限なく無料です。使用完了カードとアプリのゴミ箱は枚数に含みません。月額・年額の自動更新Proは同じ機能でカード枚数の上限を解除します。地域別の価格と請求期間はPro画面とAppleの購入画面で確認してください。買い切りや別の無料体験期間はありません。</p>
+<p>上限は新規保存だけに適用します。購読終了後も既存資料の閲覧・検索・編集・使用・整理・復元・書き出しを続けられます。解約しても残りの利用期間は維持されます。今日 → 設定 → Proで購入の復元と購読管理を利用できます。更新・請求・解約はAppleが管理し、アプリ削除だけでは解約されません。アプリの表示言語は韓国語・英語です。</p>
+<p>解約しない場合、選択した期間で自動更新されます。<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple標準利用規約</a>が適用されます。</p>
 <h2>よくある質問</h2><h3>写真が表示されません。</h3><p>iPhone設定 → プライバシーとセキュリティ → 写真 → 쓰일사진を確認してください。</p>
 <h3>カメラが開きません。</h3><p>iPhone設定 → プライバシーとセキュリティ → カメラで쓰일사진を有効にしてください。</p>
 <h3>認識結果が間違っています。</h3><p>反射、傾き、ぼけ、切れた画像で結果が変わる場合があります。保存前に修正してください。</p>
@@ -84,7 +96,7 @@ strong{color:var(--text)}a{color:var(--accent);text-underline-offset:3px}.footer
 <h3>アプリデータをすべて削除するには？</h3><p>設定で範囲を選びます。この端末のみの削除は他の端末とiCloudを維持し、同期・バックアップをオフにします。iCloudを含む削除はこのアプリの同期資料とバックアップも削除します。他の端末では削除の確認が必要です。失敗した場合は完了状態を確認してください。</p>
 <h3>アプリデータ削除で元写真も消えますか？</h3><p>いいえ。Photosの元写真と書き出したファイルは両方の削除範囲から除外します。元写真の整理は別操作で、ユーザーの選択とiPhoneのシステム確認が必要です。カード復元はアプリ保管画像を復元し、Photosの元写真を自動復元しません。</p>
 <h3>問い合わせ時に必要な情報は？</h3><p>アプリのバージョン・ビルド、iOSバージョン、画面、再現手順をお送りください。機密情報は隠してください。</p>
-<h2>関連文書</h2><p><a href="index.html#ja">プライバシーポリシーを見る</a></p><div class="footer"><p>© 2026 Studio JS. All rights reserved.</p><p>最終更新日：2026年10月8日</p></div></section>
+<h2>関連文書</h2><p><a href="index.html#ja">プライバシーポリシーを見る</a></p><div class="footer"><p>© 2026 Studio JS. All rights reserved.</p><p>最終更新日：2026年10月20日</p></div></section>
 </main>
 <script>
 function setLang(lang,btn){
